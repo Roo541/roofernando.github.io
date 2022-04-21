@@ -3248,7 +3248,7 @@ input, select, textarea {
 				height: 100vh;
 			}
 
-		#wrapper.fade-in:before {
+		/*#wrapper.fade-in:before {
 			pointer-events: none;
 			-moz-transition: opacity 1s ease-in-out;
 			-webkit-transition: opacity 1s ease-in-out;
@@ -3279,7 +3279,7 @@ input, select, textarea {
 				background-size: auto,								auto,														auto 175%;
 			}
 
-		}
+		}*/
 
 /* Intro */
 
@@ -3310,7 +3310,7 @@ input, select, textarea {
 		cursor: default;
 		text-align: center;
 		z-index: 1;
-		min-height: 1vh;
+		min-height: 100vh;
 	}
 
 		#intro input, #intro select, #intro textarea {
