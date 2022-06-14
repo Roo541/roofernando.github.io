@@ -172,7 +172,7 @@
 
 						\end{array}
 						\]
-
+						Example of a.
 						$$ \Delta P_{n} = n \times F \times \times \sigma \times \sqrt{t} $$
 						$$ \textrm{n = } \pm \textrm{[1,2],}  \textrm{ F = 226.00, }  \sigma = 0.21, \textrm{t=14/52}   $$
 						$$ \Delta P_{1} = 1 \times 226.00 \times 0.21 \times \sqrt{14/52}  = \pm 24.63 $$
@@ -186,12 +186,84 @@
 
 						<br>
 						<a class="image"><img src="images/jpg" width="600" height="auto" /></a><br>
-
-
 						</p>
 						<p>
-							
+						<strong>3. </strong> To calculate a more exact price change, we can use the exponential function exp(x). If F is
+						the forward or futures price, t is a time period expressed in years, and &sigma; is the annual volatility:
+						$$ \textrm{up n standard deviations = } F \times e^{n \times \sigma \times \sqrt{t}} $$
+						$$ \textrm{down n standard deviations = } F \times e^{-n \times \sigma \times \sqrt{t}} $$
+
+						Using the same prices, volatilities, and time periods in question 2, recalculate the one and two standard deviation price 
+						ranges using the exponential function. How do these values differ from the simple values above?
+
+						Answer:
+						\[
+						\begin{array}{|c|c|c|c|c|c|c|c|}
+						\hline
+							\text{} & \text{Futures Price} & \text{Volatility} & \text{Time Period} & \text{Down one std. dev.} & \text{Up one std. dev.}
+							& \text{Down two std. dev.} & \text{Up two std. dev.} \\
+						\hline
+							\text{a.} & \text{226.00} & \text{21.00%} & \text{14 weeks} & 202.67 & 252.01 & 181.75 & 281.03 \\
+						\hline
+							\text{b.} & \text{1,869.00} & \text{14.00%} & \text{11 months} & 1,634.54 & 2,137.09 & 1,429.50 & 2,443.63 \\
+						\hline
+							\text{c.} & \text{103.82} & \text{9.50%} & \text{116 days} & 98.41 & 109.53 & 93.27 & 115.56 \\
+						\hline
+							\text{d.} & \text{16.97} & \text{38.00%} & \text{5 months} & 13.28 & 21.69 & 10.39 & 27.72 \\
+						\hline
+							\text{e.} & \text{9,623.00} & \text{18.25%} & \text{23 weeks} & 8,523.12 & 10,864.82 & 7,548.95 & 12,266.89 \\
+						\hline								
+
+						\end{array}
+						\]
+
+						Example of a.
+						$$ \Delta P_{\pm n} = F \times e^{\pm n \times \sigma \times \sqrt{t}} $$
+						$$ \textrm{n = } \pm \textrm{[1,2],}  \textrm{ F = 226.00, }  \sigma = 0.21, \textrm{t=14/52}   $$
+						$$ \textrm{-1 std. dev.} = 226.00 \times e^{-0.21 \times \sqrt{14/52}} = 202.67, \textrm{ Range:[202.67, 226.00]} $$
+						$$ \textrm{+1 std. dev.} = 226.00 \times e^{0.21 \times \sqrt{14/52}} = 252.01, \textrm{ Range:[226.00, 252.01]} $$
+
+						$$ \textrm{-2 std. dev.} = 226.00 \times e^{-2 \times 0.21 \times \sqrt{14/52}} = 181.75, \textrm{ Range:[181.75, 226.00]} $$
+						$$ \textrm{+2 std. dev.} = 226.00 \times e^{2 \times 0.21 \times \sqrt{14/52}} = 281.03, \textrm{ Range:[226.00, 281.03]} $$
+						
+						Explanation: Values are shifted to the right (meaning greater than its counterpart). This is because question two used a normal distribution
+						while this time we used an lognormal distribution which inherently is skewed to the right as the left is capped off by the fact that 
+						prices cannot go below 0. 	
 						</p>
+						<p>
+						<strong>4. </strong> A stock that is currently trading at a price of 104.75 has a volatility of 27.42%. <br>
+						<strong>a. </strong> What is a one and two standard deviation price range 192 days from now if interest rates are 6.19% and the stock
+						is expected to pay total dividends of 2.28 over this period? For this question use simple interest and volatility calculations
+						and ignore any interest on dividends. <br>
+
+						Answer: 
+						$$ S = 104.75, \sigma = \textrm{27.42%}, \textrm{r = 6.19%}, Div = 2.28, t = 192/365 $$
+						$$ F = S + (S \times r \times t) - Div  $$
+						$$ F = 104.75 +(104.75 \times 0.0619 \times 192/365) - 2.28  $$
+						$$ F = 105.88  $$
+
+						$$ +1n = 105.88 + 1 \times 105.88 \times 0.2742 \times \sqrt{192/365} = 126.94  $$
+						$$ -1n = 84.82 $$
+						$$ +2n = 148.00 $$
+						$$ -2n = 63.77 $$
+
+						<strong>b. </strong> Suppose the divident of 2.28 will be paid all at once in 43 days. Now go back and do the same one and 
+						two standard deviation calculation using continuous interest and volatility (the exponential function), and include any interest
+						that can be earned on the dividend. Assume that the same interest rate of 6.19% applies to all interest calculations. <br>
+						Answer: <br>
+						$$ S = 104.75, \sigma = \textrm{27.42%}, \textrm{r = 6.19%}, Div = 2.28, t = 192/365 $$
+						$$ F = S \times e^{r \times t} - Div \times e^{r \times t_{div}}  $$
+						$$ F = 104.75 \times e^{0.0619 \times 192/365} - 2.28 \times e^{0.0619 \times (192-43)/365}  $$
+						$$ F = 105.88  $$
+						$$ +1n = 105.88 \times e^{0.2742 \times \sqrt{192/365}} = 129.18  $$
+						$$ -1n = 86.79 $$
+						$$ +2n = 157.60 $$
+						$$ -2n = 71.13 $$
+
+						</p>
+
+
+
 
 							</section>
 
