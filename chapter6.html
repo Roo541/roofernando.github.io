@@ -185,7 +185,7 @@
 
 
 						<br>
-						<a class="image"><img src="images/jpg" width="600" height="auto" /></a><br>
+						
 						</p>
 						<p>
 						<strong>3. </strong> To calculate a more exact price change, we can use the exponential function exp(x). If F is
@@ -261,7 +261,93 @@
 						$$ -2n = 71.13 $$
 
 						</p>
+						<p>
+						<strong>5. </strong> For a normal distribution, the following are the approximate probabilities associated with one, two,
+						and three standard deviations. 
+						<li>a move greater than one standard deviation, in either direction: 31.75%</li>
+						<li>a move greater than two standard deviations, in either direction: 4.50%</li>
+						<li>a move greater than three standard deviations, in either direction: 0.25%</li>
+						<strong>a. </strong>Using the above values, fill in the probabilities indicated by the question marks in the following
+						drawing (the percentage of the area under the normal distribution curve between each set of dotted lines).
+						
+						<a class="image"><img src="images/Textbook_Work_Throughs/exercises/6.5.1.jpg" width="600" height="auto" /></a><br>
+						Answer: <br>
+						For a normal distribution distribution are as follows: <br>
+						$$ -1 std. dev. = \pm 1n = 34.135 \textrm{%}  $$
+						$$ -2 std. dev. = \pm 2n = 13.59 \textrm{%}  $$
+						$$ -3 std. dev. = \pm 3n = 2.135 \textrm{%}  $$
+						
+						<strong>b. </strong> From your answers above, what is the approximate probability of getting an occurence over the folowing ranges?
+						<ol type="I">
+						<li>An up move less than two standard deviations</li>
+						$$ \textrm{1n + 2n = 34.135 + 13.59 = 47.725%} $$
 
+						<li>An up or down move between one and two standard deviations</li>
+						$$ \textrm{Ranges: [-1n, -2n] & [1n, 2n] } $$
+						$$ 2 \times 2n = 2 \times 13.59 = \textrm{27.18%}  $$
+
+						<li>A down move between two and three standard deviations</li>
+						$$ \textrm{2.135%} $$
+
+						<li>An up move of less than one standard deviation or a down move of less than two standard deviations</li>
+						$$ \textrm{Ranges:[0, 1n] & [-2n, 0]} $$
+						$$ 1n + abs(-1n) + abs(-2n) = 34.135 + 34.135 + 13.59 = \textrm{83.09%} $$
+
+						<li>A down move between one and two standard deviations and an up move between two and three standard deviations</li>
+						$$ \textrm{13.59 + 2.135 = 15.725%} $$
+
+						<li>A down move greater than two standard deviations and an up move greaterthan one standard deviation</li>
+						$$ \textrm{Ranges:} [-\infty, -2n], [1n, \infty] $$
+						$$ 0.135 + 2.135 + 13.59 + 2.135 + 0.135 = \textrm{18.135%} $$
+						$$ \textrm{Note: 0.135 comes in from probabilites greater than a 3 std. dev.} $$
+
+						<li>An up move greater than three standard deviations</li>
+						$$ \textrm{0.135%} $$
+					    </ol>	
+						</p>
+
+						<p>
+						<strong> 6. </strong> An underlying contract is trading at a price close to 100. The implied volatility of options in this 
+						market is approximately 20%. Over a 10-day period you observe the following 10 close-to-close price changes for the underlying contract:
+						\[
+						\begin{array}{|c|c|c|}
+						\hline
+						  \text{Day 1} & \text{up} & \text{0.75} \\ 
+						\hline
+						  \text{Day 2} & \text{down} & \text{2.40} \\ 
+						\hline
+						  \text{Day 3} & \text{up} & \text{1.75} \\ 
+						\hline
+						  \text{Day 4} & \text{up} & \text{0.40} \\ 
+						\hline
+						  \text{Day 5} & \text{up} & \text{3.20} \\ 
+						\hline
+						  \text{Day 6} & \text{down} & \text{1.55} \\ 
+						\hline
+						  \text{Day 7} & \text{down} & \text{1.00} \\ 
+						\hline
+						  \text{Day 8} & \text{up} & \text{0.15} \\ 
+						\hline
+						  \text{Day 9} & \text{up} & \text{1.40} \\ 
+					  	\hline
+						  \text{Day 10} & \text{down} & \text{0.55} \\ 
+						\hline
+						\end{array}
+						\]
+						
+						<strong>a. </strong> Do you think these price changes are consistent with a volatilityof 20%? If not, why?
+						$$ S = 100.00, \sigma = \textrm{20% which is also equivalent to 1 std. dev.} $$ 
+						$$ \textrm{Calculate Daily volatilty: } S \times \sigma \times \sqrt{t} = 100.00 \times 0.20 \times \sqrt{1/256} = \pm 1.25   $$
+						$$ \textrm{This says that roughly 7/10 days should be in the range of } \pm 1.25 \textrm{price movement} $$
+						$$ \textrm{Only 5 days are within the 1 std. dev. making the volatility of 20% to low} $$
+
+						<strong>b. </strong> If 20% seems wrong, using only a simple calculator, what mighty be your volatility estimate for the 10-day period?
+						$$ \Delta P_{n} = n \times \sigma \times \sqrt{t} $$
+						$$ \textrm{Find a value of } \Delta P_{1} \textrm{where it meets about 7 out of 10 days}  $$
+						$$ \textrm{We'll say that} \Delta P_{1} = 1.55 $$
+						$$ \textrm{Then solve for sigma, } \sigma = \frac{\Delta P_{1}}{n \times \sqrt{t}} $$
+						$$ \sigma = \textrm{24.80%} $$ 
+						</p>
 
 
 
