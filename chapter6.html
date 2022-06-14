@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Option Volatility And Pricing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Back Home</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<style>
+							.image 
+							{border:0,
+							display: inline-block;
+							position:relative; }
+							.image img 
+							{display:block;
+							max-width:100%;
+							}
+						</style>
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h3>Chapter 6: Volatility </h3>
+								</header>
+						
+						<p>
+							<strong>Summary</strong> <br>
+							Talk about what this chapter was? <br>
+							What were the main takeaways?<br>
+							Any good analogies gained from it?<br>
+						</p>
+						<p>
+							<strong>Exercise problems:</strong> <br>
+						
+						<strong>1. </strong> t is a time period expressed in years, &sigma; is the annual volatility and F is the forward futures price, then for simple
+						volatility calculations (rather than exponential calculations) a price change of n standard deviations over the time period t can be 
+						approximated as:
+						
+						$$ n\times F \times \sigma \times \sqrt{t} $$
+						
+						For a daily standard deviation, traders customarily assume 256 trading days in a year.
+
+						$$ \textrm{t is therefore 1/256}, \textrm{and} \sqrt{t} = 1/16 $$
+
+						For a weekly standard deviation, assuming 52 trading weeks in a year, t is 1/52 and &radic;t = 1/7.2 <br>
+						Using simple volatility calculations, and assuming that the forward price is equal to the current price,
+						what is an approximate daily and weekly one standard deviation price change for each of the contracts below? <br>
+						<strong>a. </strong>contract price = 78.00 <br>
+						Answer:
+
+						\[
+						\begin{array}{|c|c|c|c|c|}
+						\hline
+						  \text{Volatility} & \text{20%} & \text{30%} & \text{40%} & \text{50%} \\ 
+						\hline
+						   \text{daily standard deviation} & \pm0.98 & \pm1.46 & \pm1.95 & \pm2.44 \\
+						\hline
+						   \text{weekly standard deviation} & \pm2.16 & \pm3.24 & \pm4.33 &\pm5.41 \\
+				
+						\hline
+						\end{array}
+						\]
+						
+						$$ n = 1, F = 78.00, \sigma = 0.20 $$
+						$$ \textrm{Daily = } 1 \times 78 \times 0.20 \times \sqrt{1/256} = \pm 0.98 $$
+						$$ \textrm{Weekly = } 1 \times 78 \times 0.20 \times \sqrt{1/52} = \pm 2.16 $$
+						
+						<strong>b. </strong>contract price = 1,325.00 <br>
+						Answer:
+
+						\[
+						\begin{array}{|c|c|c|c|c|}
+						\hline
+						  \text{Volatility} & \text{10%} & \text{15%} & \text{20%} & \text{25%} \\ 
+						\hline
+						   \text{daily standard deviation} & \pm 8.28 & \pm 12.42 & \pm 16.56 & \pm 20.70 \\
+						\hline
+						   \text{weekly standard deviation} & \pm 18.37 & \pm 27.56 & \pm 36.75 &\pm 45.94 \\
+				
+						\hline
+						\end{array}
+						\]
+						
+						<strong>c. </strong>contract price = 1.6270 <br>
+						Answer:
+						
+						\[
+						\begin{array}{|c|c|c|c|c|}
+						\hline
+						  \text{Volatility} & \text{8%} & \text{10%} & \text{12%} & \text{14%} \\ 
+						\hline
+						   \text{daily standard deviation} & \pm 0.008 & \pm 0.010 & \pm 0.012 & \pm 0.014 \\
+						\hline
+						   \text{weekly standard deviation} & \pm 0.018 & \pm 0.023 & \pm 0.027 &\pm 0.032 \\
+				
+						\hline
+						\end{array}
+						\]
+
+						<strong>d. </strong>contract price = 669.00 <br>
+						Answer:
+						
+						\[
+						\begin{array}{|c|c|c|c|c|}
+						\hline
+						  \text{Volatility} & \text{15%} & \text{23%} & \text{31%} & \text{39%} \\ 
+						\hline
+						   \text{daily standard deviation} & \pm 6.27 & \pm 9.62 & \pm 12.96 & \pm 16.31 \\
+						\hline
+						   \text{weekly standard deviation} & \pm 13.92 & \pm 21.34 & \pm 28.76 &\pm 36.18 \\
+				
+						\hline
+						\end{array}
+						\]
+
+						<strong>e. </strong>contract price = 3,187.00 <br>
+						Answer:
+						
+						\[
+						\begin{array}{|c|c|c|c|c|}
+						\hline
+						  \text{Volatility} & \text{13%} & \text{17%} & \text{21%} & \text{25%} \\ 
+						\hline
+						   \text{daily standard deviation} & \pm 25.89 & \pm 33.86 & \pm 41.83 & \pm 49.80 \\
+						\hline
+						   \text{weekly standard deviation} & \pm 57.45 & \pm 75.13 & \pm 92.81 &\pm 110.49 \\
+				
+						\hline
+						\end{array}
+						\]
+						<br>
+
+						<strong>2. </strong> Using volatility calculations, for each futures contract and volatility below, what is an approximate one
+						and two standard deviation price range over the given time period? Assume that a year is made up of 12 months, 52 weeks, or 365 days. <br>
+						Answer:
+						\[
+						\begin{array}{|c|c|c|c|c|c|c|c|}
+						\hline
+							\text{} & \text{Futures Price} & \text{Volatility} & \text{Time Period} & \text{Down one std. dev.} & \text{Up one std. dev.}
+							& \text{Down two std. dev.} & \text{Up two std. dev.} \\
+						\hline
+							\text{a.} & \text{226.00} & \text{21.00%} & \text{14 weeks} & 201.37 & 250.63 & 176.75 & 275.25 \\
+						\hline
+							\text{b.} & \text{1,869.00} & \text{14.00%} & \text{11 months} & 1,618.48 & 2,119.52 & 1,367.96 & 2,370.04 \\
+						\hline
+							\text{c.} & \text{103.82} & \text{9.50%} & \text{116 days} & 98.26 & 109.38 & 92.70 & 114.94 \\
+						\hline
+							\text{d.} & \text{16.97} & \text{38.00%} & \text{5 months} & 12.81 & 21.13 & 8.64 & 25.30 \\
+						\hline
+							\text{e.} & \text{9,623.00} & \text{18.25%} & \text{23 weeks} & 8,455.02 & 10,790.98 & 7,287.04 & 11,958.06 \\
+						\hline								
+
+						\end{array}
+						\]
+
+						$$ \Delta P_{n} = n \times F \times \times \sigma \times \sqrt{t} $$
+						$$ \textrm{n = } \pm \textrm{[1,2],}  \textrm{ F = 226.00, }  \sigma = 0.21, \textrm{t=14/52}   $$
+						$$ \Delta P_{1} = 1 \times 226.00 \times 0.21 \times \sqrt{14/52}  = \pm 24.63 $$
+						$$ \textrm{-1 std. dev.} = 226.00 - 24.63 = 201.37, \textrm{ Range:[201.37, 226.00]} $$
+						$$ \textrm{+1 std. dev.} = 226.00+ 24.63 = 250.63, \textrm{ Range:[226.00, 250.63]} $$
+
+						$$ \Delta P_{2} = 2 \times 226.00 \times 0.21 \times \sqrt{14/52}  = \pm 49.25 $$
+						$$ \textrm{-2 std. dev.} = 226.00 - 49.25 = 176.75, \textrm{ Range:[176.75, 226.00]} $$
+						$$ \textrm{+2 std. dev.} = 226.00+ 49.25 = 275.25, \textrm{ Range:[226.00, 275.25]} $$
+
+
+						<br>
+						<a class="image"><img src="images/jpg" width="600" height="auto" /></a><br>
+
+
+						</p>
+						<p>
+							
+						</p>
+
+							</section>
+
+					</div>
+
+				
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
