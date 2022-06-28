@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Option Volatility And Pricing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Back Home</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<style>
+							.image 
+							{border:0,
+							display: inline-block;
+							position:relative; }
+							.image img 
+							{display:block;
+							max-width:100%;
+							}
+						</style>
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h3>Chapter 7: Risk Measurement </h3>
+								</header>
+						
+						<p>
+							<strong>Summary</strong> <br>
+							Talk about what this chapter was? <br>
+							What were the main takeaways?<br>
+							Any good analogies gained from it?<br>
+						</p>
+						<p>
+							<strong>Exercise problems:</strong> <br>
+						
+						<strong>1. </strong> Match each risk measure with the correct definition:
+						\[
+						\begin{array}{|c|c|}
+						\hline
+						  \text{Risk Measure} & \text{Definition} \\ 
+						\hline
+						\textbf{1.}\text{ Theta} & \textbf{A.}\text{The sensitivity of an option's theoretical value to a change in volatility} \\
+						\hline
+						\textbf{2.}\text{ Gamma} & \textbf{B.}\text{The sensitivity of an option's theoretical value to a change in the underlying price} \\
+						\hline
+						\hline
+						\textbf{3.}\text{ Rho} & \textbf{C.}\text{The sensitivity of an option's delta to a change in the underlying price} \\
+						\hline
+						\hline
+						\textbf{4.}\text{ Vega} & \textbf{D.}\text{The sensitivity of an option's theoretical value to a change in interest rates} \\
+						\hline
+						\hline
+						\textbf{5.}\text{ Delta} & \textbf{E.}\text{The sensitivity of an option's theoretical value to the passage of time} \\
+						\hline
+						\end{array}
+						\]
+						Answer:
+						$$ \textbf{1.} E ,\textbf{2.} C ,\textbf{3.} D ,\textbf{4.} A, \textbf{5.} B $$
+						</p>
+						
+						<p>
+						<strong>2. </strong> For stock options, which risk measure can be used to estimate the sensitivity of an option's value to a change in dividend?<br>
+						Answer:
+						$$ \text{Delta, given that delta is the partial derivative of the option value with respect to movement in the underlying asset,} $$
+						$$ \text{a cut/raise of 
+						dividends will have the largest impact on the underlying asset price and therefore delta.}   $$
+						</p>
+
+						<p>
+						<strong>3. </strong> For each option value and delta below, to the nearest .01 estimate the option's new value if the underlying
+						price changes by the given amount.<br>
+						Answer:
+						\[
+						\begin{array}{|c|c|c|c|c|}
+						\hline
+						  \text{} & \text{Current Option Value} & \text{Delta (Whole Number Format)} & \text{Underlying Price Change} & \text{New Option Value}\\ 
+						\hline
+						\textbf{a.} &\text{ 10.25} & \text{60} & \text{+0.40} & \text{10.49}\\
+						\hline
+						\textbf{b.} &\text{ 24.60} & \text{-44} & \text{-5.20} & \text{26.89}\\
+						\hline
+						\hline
+						\textbf{c.} &\text{ 5.41} & \text{27} & \text{-2.30} & \text{4.79}\\
+						\hline
+						\hline
+						\textbf{d.} &\text{ 51.40} & \text{-15} & \text{+13.68} & \text{49.35}\\
+						\hline
+						\hline
+						\textbf{e.} &\text{ 1.24} & \text{72} & \text{+0.18} & \text{1.37}\\
+						\hline
+						\hline
+						\textbf{f.} &\text{ 8.90} & \text{-85} & \text{-5.25} & \text{13.36}\\
+						\hline
+						\end{array}
+						\]
+
+						Which of the above options are calls, and which are puts?
+						$$\text{a.Call, b.Put, c.Call, d.Put, e.Call, f.Put} $$
+						</p>
+
+						<p>
+						<strong>4. </strong> As the underlying price changes, the delta will change by an amount indicated by the gamma, where the gamma
+						is expressed as the change in the delta per one point change in the underlying price. To approximate the change in an option's value
+						as the underlying price changes, we can use the average delta for the given price change.<br>
+						For each option delta and gamma below, estimate the option's new delta if the underlying price changes by the given amount. Then,
+						using the option's average delta, to the nearest .01 estimate the option's new value if the underlying price changes by the given 
+						amount. (Delta and gamma are both given in the whole number format.)
+
+						Answer:
+						\[
+						\begin{array}{|c|c|c|c|c|c|c|}
+						\hline
+						  \text{} & \text{Current Option Value } & \text{Delta} & \text{Gamma} & \text{Underlying Price Change} & \text{New Option Delta} & \text{New Option Value}\\ 
+						\hline
+						\textbf{a.} &\text{ 4.58} & \text{57} & \text{4} & \text{+3.00} & \text{69} & \text{6.47} \\
+						\hline
+						\textbf{b.} &\text{ 1.70} & \text{-39} & \text{7} & \text{-0.94} & \text{-45.58} & \text{2.10}\\
+						\hline
+						\hline
+						\textbf{c.} &\text{ 4.94} & \text{28} & \text{1.1} & \text{-8.50} & \text{18.65} & \text{2.96}\\
+						\hline
+						\hline
+						\textbf{d.} &\text{ 10.09} & \text{-83} & \text{2.8} & \text{-6.75} & \text{-100} & \text{16.27}\\
+						\hline
+						\hline
+						\textbf{e.} &\text{ 0.58} & \text{21} & \text{6.5} & \text{-3.70} & \text{0} & \text{0.19}\\
+						\hline
+						\hline
+						\textbf{f.} &\text{ 3.95} & \text{-12} & \text{0.3} & \text{+18.20} & \text{-6.54} & \text{2.26}\\
+						\hline
+						\end{array}
+						\]
+						
+						$$ \text{Calculating new delta: } \Delta_{new} = \Delta_{old} \times \gamma $$
+						$$ \text{Calculating New Option Value: } O_{f} = O_{i} + \Delta_{avg} \times Underlying Price Change $$
+						$$ \text{New option value is calculated using }  \Delta_{avg} \text{ as it is more accurate being that delta is not constant as underlying} $$
+						$$ \text{price changes. Gamma is the change in delta with 1 point move in underling price.} $$
+						$$ \text{Gamma is utilized to calculate a more acurate delta } \Delta_{avg} \text{ which is then used to find new option value.} $$
+						</p>
+
+						<p>
+						<strong>5. </strong> <br> Theta is usually expressed as the change in an option's value per one day's passage of time.<br>
+						Vega is usually	expressed as the change in an option's value per one percentage point change in volatility. <br>
+						Rho is usually expressed as the change in an option's value per one percentage point change in interest rates. <br>
+						For each option value, risk measure, and change in market conditions below, to the nearest .01 estimate the option's new value.
+						
+						Answer:
+						\[
+						\begin{array}{|c|c|c|c|c|}
+						\hline
+						  \text{} & \text{Option Value } & \text{Risk Measure} & \text{Change in Market Conditions} & \text{New Option Value} \\ 
+						\hline
+						\textbf{a.} &\text{ 5.18} & \text{theta = -0.95} & \text{2 days pass} & \text{4.99}\\
+						\hline
+						\textbf{b.} &\text{ 0.67} & \text{vega = .047} & \text{volatility rises 3.2%} & \text{0.82} \\
+						\hline
+						\hline
+						\textbf{c.} &\text{ 22.75} & \text{rho = -.177} & \text{interest rates rise 2.90%} & \text{22.24} \\
+						\hline
+						\hline
+						\textbf{d.} &\text{ 1.64} & \text{theta = -.024} & \text{13 days pass} & \text{1.33} \\
+						\hline
+						\hline
+						\textbf{e.} &\text{ 12.10} & \text{vega = .232} & \text{volatility falls 5.6%} & \text{10.80} \\
+						\hline
+						\hline
+						\textbf{f.} &\text{ 3.99} & \text{rho = .088} & \text{interest rates fall 1.67%} & \text{3.84} \\
+						\hline
+						\end{array}
+						\]
+						$$ \text{How to calculate new option value } 0_{f} \text{ when market conditions change for } \theta \text{, vega, } \rho $$ 
+						$$ \text{When risk measure is theta: } O_{f} = O_{i} + \text{(days passed)} \times \theta$$
+						$$ \text{When risk measure is vega: } O_{f} = O_{i} + \text{[vol rise(+) or fall(-)]} \times vega$$
+						$$ \text{When risk measure is rho: } O_{f} = O_{i} + \text{[interest rate rise(+) or fall(-)]} \times \rho$$
+						</p>
+
+						<p>
+						<strong>6. </strong> For each option and set of risk measures below, to the nearest .01 what will be the options new price
+						if the given changes in market conditions occur?<br>
+						<strong>a. </strong> <br>
+						current option price = 4.55<br>
+						delta = 62 (whole number format)<br>
+						gamma = 4.4 (whole number format)<br>
+						vega = .13 <br>
+						The underlying price falls by 3.28 and implied volatility rises by 2.6 percentage points. <br>
+						$$ O_{i} = 4.55, \Delta = 62, \theta = 0.13, \alpha = (S_{2} - S_{1}) = -3.28, vol = +2.6\text{%}  $$
+						$$ P_{\Delta} = \overline{\Delta} \times \alpha = -1.80  $$
+						$$ P_{vega} = \sigma \times vol =+0.34 $$
+						$$ O_{f} = O_{i} + P_{\Delta} + P_{vega}  $$
+						$$ O_{f} = 4.55 - 1.80 + 0.34 = 3.09  $$
+						
+						<strong>b. </strong> <br>
+						current option price = 8.87<br>
+						theta = -.199<br>
+						rho = -.135<br>
+						Six days pass with no change in the underlying price and interest rates fall 1.20 percentage points (120 basis points).<br>
+						$$  O_{i} = 8.87, \theta = -.199, \rho = -.135  $$
+						$$ P_{\theta} = (days passed) \times \theta = -1.19 $$
+						$$ P_{\rho} = \rho \times \text{(rise/fall interest rate)} = +0.16 $$
+						$$ O_{f} = O_{i} + P_{\theta} + P_{rho} $$
+						$$ O_{f} = 8.87 -1.19 + .16 = 7.84 $$
+
+
+						</p>
+							</section>
+
+					</div>
+
+				
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
