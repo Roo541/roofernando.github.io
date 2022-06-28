@@ -45,16 +45,27 @@
 						
 						<p>
 							<strong>Summary</strong> <br>
-							Talk about what this chapter was? <br>
-							What were the main takeaways?<br>
-							Any good analogies gained from it?<br>
+							This chapter was regarding the option greeks. The greeks are essentially the partial derivatives of the option contract value.<br> 
+							<strong>Delta</strong> is the partial derivative of the Option contract value with respect to the underlying price change. It has a value from [0,1]
+							for calls and [-1,0] for puts. The sign of delta regarding the traders position represents which direction of motion the trader 
+							wants the position to go. Positive delta wanting a price increase, negative wanting a delta price decrease.<br>
+							<strong>Gamma</strong> is the derivative of the delta with respect to the underlying price change. For going long on both calls and puts gamma is 
+							always positive as the tangent line to the delta curve for either position is positive. Gamma is seen as the magnitude of price change.
+							A positive gamma wants a swift increase in price as negative wants the price change to be slow or at a standstill. <br>
+							<strong>Theta</strong> is the partial derivative of the Option contract value with respect to time. When long on a call or put theta
+							is a negative as the time value decays and decreases the overall value of the option contract. Being a seller theta is positive in that
+							the trader is collection the theta decay. <br>
+							<strong>Vega</strong> is the partial derivative of the Option contract value with respect to change in implied volatility. Both Calls and Puts
+							increase in value as implied volatility increases. <br>
+							<strong>Rho</strong> is the partial derivative of the Option contract value with respect to change in risk free interest rates. <br>
+							The chapter does not utilize calculus as all of the independent variables (greeks) change incrementally rather than at an infinitely small sizes. 
 						</p>
 						<p>
 							<strong>Exercise problems:</strong> <br>
 						
 						<strong>1. </strong> Match each risk measure with the correct definition:
 						\[
-						\begin{array}{|c|c|}
+						\begin{array}{|l|l|}
 						\hline
 						  \text{Risk Measure} & \text{Definition} \\ 
 						\hline
@@ -204,7 +215,7 @@
 						The underlying price falls by 3.28 and implied volatility rises by 2.6 percentage points. <br>
 						$$ O_{i} = 4.55, \Delta = 62, \theta = 0.13, \alpha = (S_{2} - S_{1}) = -3.28, vol = +2.6\text{%}  $$
 						$$ P_{\Delta} = \overline{\Delta} \times \alpha = -1.80  $$
-						$$ P_{vega} = \sigma \times vol =+0.34 $$
+						$$ P_{vega} = vega \times vol =+0.34 $$
 						$$ O_{f} = O_{i} + P_{\Delta} + P_{vega}  $$
 						$$ O_{f} = 4.55 - 1.80 + 0.34 = 3.09  $$
 						
@@ -219,6 +230,123 @@
 						$$ O_{f} = O_{i} + P_{\theta} + P_{rho} $$
 						$$ O_{f} = 8.87 -1.19 + .16 = 7.84 $$
 
+						<strong>c. </strong> <br>
+						current option price = 4.73<br>
+						delta = 43 (whole number format)<br>
+						vega = .217<br>
+						theta = -.027<br>
+						rho = .142<br>
+						Four days pass, implied volatility falls 1.75 percentage points, interest rates rise .75 percentage points, and the dividend is 
+						increased by .37 (this is a stock option).<br>
+						$$ O_{i} = 4.73, \Delta = 43, vega = .217, \theta = -.027, \rho = .142, div = +.37, vol = -1.75, int = +.75  $$
+						$$ P_{\Delta} = \overline{\Delta} \times div = -0.16  $$
+						$$ P_{vega} = vega \times vol = -0.38 $$
+						$$ P_{\theta} = (days passed) \times \theta = -0.11 $$
+						$$ P_{\rho} = \rho \times int = +0.11 $$
+						$$ O_{f} = O_{i} + P_{\Delta} + P_{vega} + P_{\theta} + P_{\rho} = 4.19 $$   
+
+						</p>
+						<p>
+						<strong>7. </strong> Complete each of the following statements: <br>
+						Answer: <br>
+						<strong>a. </strong> A position with a positive delta wants: <i>the underlying price to increase.</i> <br>
+						<strong>b. </strong> A position with a negative gamma wants: <i>the underlying to sit still or move slowly.</i><br>
+						<strong>c. </strong> A position with a negative rho wants: <i>Interest rates to fall.</i><br>
+						<strong>d. </strong> A position with a positive vega wants: <i>volatility to go up.</i><br>
+						<strong>e. </strong> A position with a positive gamma wants: <i>very large or swift movements.</i><br>
+						<strong>f. </strong> A position with a positive delta and negative gamma wants: <i>a slow increase in price.</i><br>
+
+						</p>
+						<p>
+						<strong>8. </strong> Complete each statement below with either "increase in value" or "decline in value". <br>
+						Answer:<br>
+						<strong>a. </strong> If the underlying price remains unchanged, as time passes a position with a negative theta will: <br>
+						<i>Decline in value</i><br>
+						<strong>b. </strong> If the underlying price remains unchanged, as time passes a position with a positive gamma will: <br>
+						<i>Decline in value</i><br>
+						<strong>c. </strong> If interest rates fall, a position with a negative rho will: <br>
+						<i>Increase in value</i><br>
+						<strong>d. </strong> If implied volatility falls, a position with a negative vega will: <br>
+						<i>Increase in value</i><br>
+						<strong>e. </strong> If the underlying price makes a large move, a position with a positive theta will: <br>
+						<i>Decline in value</i><br>
+						<strong>f. </strong> If the underlying price makes a large move, a position with a positive gamma will: <br>
+						<i>Increase in value</i><br>
+
+						</p>
+
+						<p>
+						<strong>9. </strong> Fill in each blank with either "long" or "short".<br>
+						Answer: <br>
+						<strong>a. </strong> A trader who buys calls has a <i><u>Short</u></i> theta position. <br>
+						<strong>b. </strong> A trader who sells puts has a <i><u>Long</u></i> delta position.<br> 
+						<strong>c. </strong> A trader who sells puts has a <i><u>Short</u></i> gamma position.<br>
+						<strong>d. </strong> A trader who sells calls has a <i><u>Short</u></i> vega position.<br>
+						<strong>e. </strong> A trader who buys stock option puts has a <i><u>Short</u></i> rho position.<br>
+						<strong>f. </strong> A trader who sells puts has a <i><u>Long</u></i> theta position.<br>
+						<strong>g. </strong> A trader who buys puts has a <i><u>Long</u></i> vega position.<br>
+						<strong>h. </strong> A trader who sells stock option calls has a <i><u>Short</u></i> rho position.<br>
+						<strong>i. </strong> A trader who buys calls has a <i><u>Long</u></i> gamma position.<br>
+
+						</p>
+						<p>
+						<strong>10. </strong> Match each set of risk measures below with the set of conditions that will most work in the position's favor.
+						<a class="image"><img src="images/Textbook_Work_Throughs/exercises/7.10.1.jpg" width="600" height="auto"/></a> <br>
+						Answer:
+						$$ \textbf{1.} C ,\textbf{2.} D ,\textbf{3.} E ,\textbf{4.} A, \textbf{5.} B $$
+						
+						</p>
+
+						<p>
+						<strong>11. </strong> <br>
+						\[
+						\begin{array}{|l|l|l|l|l|l|}
+						\hline
+						  \text{Option} & \text{Delta} & \text{Gamma} & \text{Theta} & \text{Vega} & \text{Rho} \\ 
+						\hline
+						\text{June 65 Call} &\text{79} & \text{4.2} & \text{-.0190} & \text{.100} & \text{.121}\\
+						\hline
+						\text{June 70 Call} &\text{52} & \text{5.8} & \text{-.0205} & \text{.137} & \text{.083}\\
+						\hline
+						\hline
+						\text{June 75 Call} &\text{26} & \text{4.7} & \text{-.0152} & \text{.112} & \text{.043}\\
+						\hline
+						\hline
+						\text{June 65 Put} &\text{-21} & \text{4.2} & \text{-.0084} & \text{.100} & \text{.039}\\
+						\hline
+						\hline
+						\text{June 70 Put} &\text{-48} & \text{5.8} & \text{-.0092} & \text{.137} & \text{-.089}\\
+						\hline
+						\hline
+						\text{June 75 Put} &\text{-74} & \text{4.7} & \text{-.0030} & \text{.112} & \text{-.142}\\
+						\hline
+						\end{array}
+						\]
+						From the evaluation table above, a trader has the following positions:<br>
+						+3 underlying contracts <br>
+						+5 June 65 Calls,   -8 June 65 Puts <br>
+						-6 June 70 Calls,   -11 June 70 Puts <br>
+						-14 June 75 Calls,   +6 June 75 Puts <br>
+
+						<strong>a. </strong> What is the trader's total... <br>
+						<li>delta position?</li><br>
+						$$ \text{delta position} = \Sigma P_{i} \times \Delta_{i} , \text{Where } P_{i} \text{ is position quantity} $$
+						$$ \text{delta position} = 3 \times 100 + 5 \times 79 + (-6) \times 52 + (-14) \times + (-8) \times (-21) + (-11) \times (-48) + 6 \times (-74) = 271 $$
+						<li>gamma position?</li><br>
+						$$ \text{gamma position} = \Sigma P_{i} \times \Gamma_{i} , \text{Where } P_{i} \text{ is position quantity} $$
+						$$ \text{gamma position} = -148.8  $$
+						<li>theta position?</li><br>
+						$$ \text{theta position} = \Sigma P_{i} \times \theta_{i} , \text{Where } P_{i} \text{ is position quantity}  $$
+						$$ \text{theta position} = 0.39  $$
+						<li>vega position?</li><br>
+						$$ \text{vega position} = \Sigma P_{i} \times vega_{i} , \text{Where } P_{i} \text{ is position quantity}  $$
+						$$ \text{vega position} = -3.53  $$
+						<li>vega position?</li>
+						$$ \text{rho position} = \Sigma P_{i} \times \rho_{i} , \text{Where } P_{i} \text{ is position quantity}  $$
+						$$ \text{rho position} = -0.056  $$
+						
+						<strong>b. </strong> Describe the changes in market conditions that will most help the position.<br>
+						$$ \text{Slow movement up in price, decrease in implied volatility, and decrease in interest rates}   $$
 
 						</p>
 							</section>
