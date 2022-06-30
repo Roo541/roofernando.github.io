@@ -214,6 +214,100 @@
 						\hline
 						\end{array}
 						\]
+						</p>
+						<br>
+						<p>
+						<strong>3. </strong> In theory an option's value should be equal to the present value of its intrinsic value at expiration,
+						plus the present value of all the cash flows resulting from the delta neutral dynamic hedging process. <br>
+						In the two scenarios below, assume that the option is hedged at each given underlying price and delta. If interest rates are zero 
+						(no present valuing is necessary), what are the values of each option?<br><br>
+						<strong>a. </strong> 55 call 
+						\[
+						\begin{array}{|l|l|l|l|l|}
+						\hline
+						\text{Underlying Price} & \text{Delta} & \text{Hedge} & \text{Cash Flow} & \text{Total Hedge}\\
+						\hline
+						\hline
+						\text{53.70 (initial)} & \text{45 (initial)} & \text{Sell 0.45} & \text{+24.17} & \text{-0.45}\\
+						\hline
+						\hline
+						\text{55.70} & \text{57} & \text{Sell 0.12} & \text{+6.68} & \text{-0.57}\\
+						\hline
+						\hline
+						\text{53.40} & \text{40} & \text{Buy 0.17} & \text{-9.08} & \text{-0.40}\\
+						\hline
+						\hline
+						\text{57.10} & \text{69} & \text{Sell 0.29} & \text{+16.56} & \text{-0.69}\\
+						\hline
+						\hline
+						\text{55.00} & \text{51} & \text{Buy 0.18} & \text{-9.90} & \text{-0.51}\\
+						\hline
+						\hline
+						\text{51.50 (underlying price at expiration)} & \text{} & \text{Buy 0.51} & \text{-26.27} & \text{0}\\
+						\hline
+						\end{array}
+						\]
+						
+						Explanation:<br>
+						An initial 55 call is bought giving us a positive delta. The rows are how the underlying behaves as time passes all
+						the way up to expiration. Initially the underlying was trading at 53.70 with a positive delta of 45. To be delta neutral we need
+						hedge in such a way that we have a net delta of 0. To do this we need to sell x amout of underlying contract at the price of 53.70.
+						If we sell teh 0.45 underlying contracts we get a cash flow of +24.17. The total hedge column is the delta achieved by our hedge 
+						which in this case is -0.45. We then move onto the next row where the underyling is now trading at 55.70 with a delta of 57. The price
+						of the underyling has increased along with our delta meaning our positions are no longer delta neutral, we currently have a +0.12 delta.
+						To become delta neutral we sell 0.12 underlying contracts giving us more cash flow of +6.68. Our total hedge delta is now -0.57. 
+						The price moves down now to 53.40 with a delta of 40 on the third row. We are now -0.17 delta meaning we have to buy underlying contracts
+						of 0.17 to get back to delta neutral. This requires us to spend meaning we get a negative cash flow of -9.08 (-0.17*53.40). 
+						On the fourth row our underling is trading at 57.10 with a delta of 69. Giving us a delta of +0.29. To get back to delta neutral we have
+						to sell 0.29 underlying at 57.10. This gives us a cash flow of +16.56 and a new total hedge delta of -0.69. Our fifth row shows 
+						the underlying price at 55.00 with a delta of 51. We are now net -0.18 delta meaning we have to buy 0.18 underlying contracts at 55.00 
+						to remain delta neutral. This costs us money giving us a cash flow of -9.90. We then arrive on the final row which is the underlying price
+						at expiration where it is trading at 51.50 and no delta (or 0) as our 55 call is out of the money. Our total delta is still -0.51 
+						meaning we have to buy 0.51 underling contracts to close out this trade at the price of 51.50. This costs us -26.27. <br>
+						Now having going through this process we have to find out what we made. To do this we sum up the value of our 55 call (intrinsic value)
+						and add it to our total cash flows. 
+
+						$$ \text{Total Value} = \text{intrinsic value of our 55 Call} + \Sigma \text{Cash Flow}   $$
+						$$ \text{Total Value} = $0 + (24.17 +6.68 - 9.08 +16.56 -9.90 -26.27) $$
+						$$ \text{Total Value} = $2.16 $$
+
+						As the price changes we hedge accordingly. Our initial 55 call ends up expiring worthless but since we hedged we made $2.16. This is 
+						under the assumption that we found a theoretical edge and made moves to take advantage of the arbitrage which is fully discovered 
+						whent the option expires.<br><br>
+
+						<strong>b. </strong> 70 put
+						\[
+						\begin{array}{|l|l|l|l|l|}
+						\hline
+						\text{Underlying Price} & \text{Delta} & \text{Hedge} & \text{Cash Flow} & \text{Total Hedge}\\
+						\hline
+						\hline
+						\text{68.42 (initial)} & \text{-65 (initial)} & \text{Buy 0.65} & \text{-44.47} & \text{+0.65}\\
+						\hline
+						\hline
+						\text{69.71} & \text{52} & \text{Sell 0.13} & \text{+9.06} & \text{+0.52}\\
+						\hline
+						\hline
+						\text{71.29} & \text{-33} & \text{Sell 0.19} & \text{+13.55} & \text{+0.33}\\
+						\hline
+						\hline
+						\text{70.19} & \text{-46} & \text{Buy 0.13} & \text{-9.12} & \text{+0.46}\\
+						\hline
+						\hline
+						\text{71.02} & \text{-28} & \text{Sell 0.18} & \text{+12.78} & \text{+0.28}\\
+						\hline
+						\hline
+						\text{68.51 (underlying price at expiration)} & \text{} & \text{Sell 0.28} & \text{+19.18} & \text{0}\\
+						\hline
+						\end{array}
+						\]
+						
+						$$ \text{Total Value} = \text{intrinsic value of our 70 Put} + \Sigma \text{Cash Flow}   $$
+						$$ \text{Total Value} = $1.49 + (-44.47+9.06+13.55-9.12+12.78+19.18) $$
+						$$ \text{Total Value} = $2.47 $$
+
+						
+
 
 						</p>
 						
