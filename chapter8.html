@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Option Volatility And Pricing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Back Home</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<style>
+							.image 
+							{border:0,
+							display: inline-block;
+							position:relative; }
+							.image img 
+							{display:block;
+							max-width:100%;
+							}
+						</style>
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h3>Chapter 4: Expiration Profit and Loss</h3>
+								</header>
+						
+						<p>
+							<strong>Summary</strong> <br>
+							Talk about what this chapter was? <br>
+							What were the main takeaways?<br>
+							Any good analogies gained from it?<br>
+						</p>
+						<p>
+						<strong>1. </strong> The process of delta hedging an option position to remain delta neutral is an important part using a 
+						theoretical pricing model. In a delta neutral position all the deltas add up to approximately zero, or at least as close to 
+						zero as is practically possible. <br>
+						\[
+						\begin{array}{|l|l||l|l|}
+						\hline
+						  \text{} & \text{July 70} & \text{July 80}& \text{July 90}\\ 
+						\hline
+						\text{call delta} & \text{70} & \text{41} & \text{18} \\
+						\hline
+						\hline
+						\text{put delta} & \text{-30} & \text{-59} & \text{-82} \\
+						\hline
+						\end{array}
+						\]
+						<strong>a. </strong> You buy 25 July 80 calls. From the table of delta values above, what do you need to do (buy? sell? how many?)
+						to hedge your position as close to delta neutral as possible using each of the following contracts?
+						\[
+						\begin{array}{|l|l|l|l|}
+						\hline
+						\textbf{i. } & \text{underlying contract} & \text{ 10.25} & \text{-10}\\
+						\hline
+						\hline
+						\textbf{ii.} & \text{July 90 call} & \text{56.94} & \text{-57}\\
+						\hline
+						\hline
+						\textbf{iii. } & \text{July 80 put} & \text{17.37} & \text{+17}\\
+						\hline
+						\end{array}
+						\]
+						
+						Answer:<br>
+						$$ \text{Delta position on the initial +25 contracts of the July 80 Calls is +1025}   $$
+						$$ \textbf{i. } \frac{1025}{100} = 10.25 \text{ ,1 underlying contract represents 100 delta} $$
+						$$ \text{Since our original position is +1025 delta we need to sell roughly 10 contracts to remain Delta neutral} $$
+						$$ \textbf{ii. } \frac{1025}{18} = 56.94, \text{Sell roughly 57 July 90 Call contracts to remain delta neutral of original position}   $$
+						$$ \textbf{iii. } \frac{1025}{59} = 17.37, \text{Buy roughly 17 July 80 Puts to remain delta neutral}  $$
+
+						<strong>b. </strong> You sell 50 July 70 puts. What do you need to do (buy? sell? how many?) to hedge your position a close to delta 
+						neutral as possible using each of the following contracts.
+						\[
+						\begin{array}{|l|l|l|l|}
+						\hline
+						\textbf{i. } & \text{July 70 call} & \text{ 21.42} & \text{-21}\\
+						\hline
+						\hline
+						\textbf{ii.} & \text{July 80 put} & \text{25.42} & \text{+25}\\
+						\hline
+						\hline
+						\textbf{iii. } & \text{July 90 put} & \text{18.30} & \text{+18}\\
+						\hline
+						\end{array}
+						\]
+						
+						Answer: <br>
+						$$ \text{Same as previous part as we are trying to calculate an opposing delta to our original}  $$ 
+						$$ \text{delta position of +1500 from selling 50 July 70 puts}  $$
+
+						<strong>c. </strong> You sell 15 underlying contracts. You would like to hedge half your delta position using July 80 puts and the other 
+						half using July 90 calls. As close as possible, how many of each contract do you need to buy or to sell?<br>
+						Answer:<br>
+						$$ \text{We have an initial delta of -1500 from selling 15 underlying contracts}   $$
+						$$ \text{Objective is to hedge our -1500 delta with half the deltas coming from the July 80 puts and half using July 90 calls}  $$
+						$$ \text{July 80 puts, } \frac{750}{59} = 12.7 \text{ meaning selling roughly 13 giving us delta of +767}   $$
+						$$ \text{July 90 calls, } \frac{750}{18} = 41.6 \text{ meaning buying roughly 41 giving us delta of +738}   $$
+						$$ \text{Summing these two positions we get a net delta of +5 which is near delta neutral}   $$<br>
+						</p>
+
+						<p>
+						<strong>2. </strong> In each of the option positions below, how many underlying contracts do you need to buy or sell in order to 
+						create an initial delta neutral position? Then, as the delta changes, how many underlying contracts do you need to buy or sell
+						in order to maintain a delta neutral position, or a position that is as close to delta neutral as possible? Delta values are
+						given in the whole number format.<br>
+						<strong>a. </strong> long 10 calls <br>
+						\[
+						\begin{array}{|l|l|l|}
+						\hline
+						\text{Current Option Delta} & \text{Current Total Delta Position} & \text{Underlying Contracts to Buy or Sell}\\
+						\hline
+						\hline
+						\text{70} & \text{+700} & \text{-7}\\
+						\hline
+						\hline
+						\text{50} & \text{-200} & \text{+2}\\
+						\hline
+						\hline
+						\text{40} & \text{-100} & \text{+1}\\
+						\hline
+						\hline
+						\text{80} & \text{+400} & \text{-4}\\
+						\hline
+						\end{array}
+						\]
+						Explanation:<br>
+						Initially we calculate the first row. We are long 10 70 calls giving us a delta of +700. We need to sell 7 underlying contracts 
+						(-700 delta) to remain delta neutral. Then in the second row we see our option delta decreases to 50. Since we are still short 7 
+						underlying contracts we have a current delta position of -200. To remain delta neutral we need to buy 2 underlying contracts (+200).
+						The next row we see that the delta decreases once again to 40. We are short 5 underlying contracts giving us a total delta of -100. 
+						To get back to delta neutral we need to buy 1 underlying contract. On the final row we see that the option delta goes to 80. We 
+						are now +400 delta meaning we have to sell 4 underlying contracts to get back to delta neutral. Overall idea is to go from 
+						row to row keeping track of the total position delta. When the total delta is unbalances adjustments in terms of buying or selling 
+						underlying contracts are done to get back to being delta neutral. <br><br>
+
+						<strong>b. </strong> short 30 calls
+						\[
+						\begin{array}{|l|l|l|}
+						\hline
+						\text{Current Option Delta} & \text{Current Total Delta Position} & \text{Underlying Contracts to Buy or Sell}\\
+						\hline
+						\hline
+						\text{28} & \text{-840} & \text{+8}\\
+						\hline
+						\hline
+						\text{40} & \text{-400} & \text{+4}\\
+						\hline
+						\hline
+						\text{63} & \text{-690} & \text{+7}\\
+						\hline
+						\hline
+						\text{52} & \text{+340} & \text{-3}\\
+						\hline
+						\end{array}
+						\]
+
+						<strong>c. </strong> long 62 puts
+						\[
+						\begin{array}{|l|l|l|}
+						\hline
+						\text{Current Option Delta} & \text{Current Total Delta Position} & \text{Underlying Contracts to Buy or Sell}\\
+						\hline
+						\hline
+						\text{-65} & \text{-4030} & \text{+40}\\
+						\hline
+						\hline
+						\text{-71} & \text{-402} & \text{+4}\\
+						\hline
+						\hline
+						\text{-33} & \text{+2354} & \text{-24}\\
+						\hline
+						\hline
+						\text{-49} & \text{-1038} & \text{+10}\\
+						\hline
+						\end{array}
+						\]
+
+						<strong>d. </strong> short 44 puts
+						\[
+						\begin{array}{|l|l|l|}
+						\hline
+						\text{Current Option Delta} & \text{Current Total Delta Position} & \text{Underlying Contracts to Buy or Sell}\\
+						\hline
+						\hline
+						\text{-95} & \text{+4180} & \text{-42}\\
+						\hline
+						\hline
+						\text{-77} & \text{-812} & \text{+8}\\
+						\hline
+						\hline
+						\text{-40} & \text{-1640} & \text{+16}\\
+						\hline
+						\hline
+						\text{0} & \text{-1800} & \text{+18}\\
+						\hline
+						\end{array}
+						\]
+
+						</p>
+						
+					</div>
+
+				
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
