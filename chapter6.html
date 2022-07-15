@@ -41,13 +41,33 @@
 							<section class="post">
 								<header class="major">
 									<h3>Chapter 6: Volatility </h3>
+
 								</header>
 						
 						<p>
 							<strong>Summary</strong> <br>
-							Talk about what this chapter was? <br>
-							What were the main takeaways?<br>
-							Any good analogies gained from it?<br>
+							This chapter focuses on volatility, mean and standard deviation, lognormal distributions, and the difference between realized 
+							and implied volatility.
+							Volatility measures the speed of the market. Markets that move slow have low volatility, while markets that move fast have 
+							high volatility. Mean and standard deviation are looked at when observing a normal distribution. A nice example of a normal distribution
+							demonstrated by the random walk of a pinbll going down a triangular maze of pegs and coming to a stop at bottom bins. Across each row the 
+							pinball touches a peg and has a 50/50 option of going either left or right. This is done as the pinball touches each peg for all the rows 
+							untill it reaches the bottom. If a large amount of pinballs through many iterations were to go down this maze there comes to what looks 
+							like a normal distribution with the mean at the center (right below where the pinball was originally dropped). Either going left or right 
+							from the center the count of pinballs in each bin get lesser making for tails on both the left and right edges. The random walk causes for a 
+							normal distribution, which intuitively makes sense. You would expect the most amount of pinballs to collect at the center bin right underneath
+							where the pinball was dropped, while the edges to be the least as it would mean that anytime the pinball encounters a peg it would go either left or
+							right 100 % of the time to reach the edges. The mean is generally the peak of the distribution, while the standard deviation is how 
+							fast the distribution spreads out. The standard deviation tells us the likelihood of the ball ending up in a specific bin, and the probability
+							of the ball ending up in a range of bins from the mean. Often known as sigma [-3,-2,-1,1,2,3] and the associated probabilities (68.3%, 95.4%, 99.7%).
+							When looking at Options, volatility is synonymous to standard deviation. When we consider pricing of a stock it is known that it does not make a 
+							normal distribution. It's a lognormal distribution because there is a cap on the downside as stocks can't go below $0 and theoretically it can go to infinity 
+							on the upside. This makes the distribution non-symetrical and more in line with a lognormal distribution, showing a slight skew to the 
+							right side as the right tail possibilities are a bit fatter. Finally we come to the difference between realized and implied volatility. 
+							Realized volatility is calculated using the historical motion of the stock over a defined timeframe. Implied volatility is back calculated 
+							because it is a forecast of what the market believes will happen. To get a certain price of an Options contract 4 out of the 5 parameters are 
+							known, with implied volatility being left out. Knowing this implied volatility can be back calculated which shows us what the market is forecasting 
+							for that given stock. 
 						</p>
 						<p>
 							<strong>Exercise problems:</strong> <br>
