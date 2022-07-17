@@ -50,28 +50,30 @@
                                 <center>
                                     <a href="monte_carlo_histogram.html" class="image fit"><img src="images/mc_histogram_2.jpg" alt="" /></a> 
                                 </center>
-                               <div style="text-align:center"> <a href="monte_carlo_histogram.html"> click image for results </a> </div> <br>
+                               <div style="text-align:center"> <a href="monte_carlo_histogram.html"> click image for results </a> </div> 
 
                                 <p>
-                                    The purpose of this experiment was to create a research environment where you can search through parameters and see whether there is a relationship between that parameter and overall portfolio return. This experiment is based off a small sample size and it was really created to fulfill curiosity and build a frame work for a research environment. 
+                                    <h4>Introduction</h4>
+                                    The purpose of this experiment was to create a research environment where you can search through parameters and see whether there is a relationship between that parameter and overall portfolio return. This experiment is based off a small sample size and it was created to fulfill curiosity and build a frame work for a research environment. 
 
-                                    The hypothetical question is that I want to construct a portfolio for the year, and my buy signals depend on 5 parameters. Out of these 5 parameters which ones are more important than the others? There’s no exact answer to this but we can search for a qualitative understanding by running a monte carlo simulation. Through many iterations we can hope to find some consistency in parameter weighting and overall portfolio return. Backtesting year by year with random weighting of each parameter gives a unique portfolio return. Through many iterations and over different years, we can search for a qualitative trend for a given parameter. 
-                                    
-                                    Let’s define some rules for our strategy. These rules are mainly based off my personal time at Haugen Equity Signals and a book called “The Little Book That Beats the Market” by Joel Greenblatt. The frequency of trades are based off Haugen as they sold signals to clients on a monthly basis. The strategy is based on the book because it’s simple enough. <br>
+                                    The hypothetical question was that I wanted to construct a portfolio for the year, and my buy signals are dependent on 5 parameters. Out of these 5 parameters which ones are more important than the others? There’s no exact answer to this, but we can search for a qualitative understanding by running a monte carlo simulation of many constructed portfolios. Through a large enough amount of iterations we hope to find some relationship between parameter weighting and overall portfolio return. Backtesting year by year with random weighting of each parameter gives a unique portfolio return. When doing this over different years, we can search for a qualitative trend for a given parameter. <br>
                                     <br>
-                                    Rules of the portfolio:<br>
-                                    1.	We are only Long no Shorts.<br>
-                                    2.	Buys occur on the first trading day of each month.<br>
-                                    3.	When it is a buying day existing stocks are liquidated at the beginning of the day and the new portfolio is constructed at the end of the day.<br>
-                                    4.	Our portfolio always Long 30 stocks and they are equally weighted.<br>
+                                    <h4>Scope</h4>
+                                    First, let’s define some rules for our strategy. These rules are mainly based off my personal time at Haugen Equity Signals and a book called “The Little Book That Beats the Market” by Joel Greenblatt. The frequency of trades are based off Haugen as they sold signals to clients on a monthly basis, and the strategy is simillar to what is found in book because it’s simple enough. <br>
                                     <br>
-                                    Rules of the strategy:<br>
-                                    1.	It’s a scoring system, there are 5 parameters and 5 scores associated for each ticker.<br>
-                                    2.	The final score is the summation of all the parameters for each stock.<br>
-                                    3.	The 30 highest scores are the stocks you buy for the month.<br>
-                                    4.	Stocks are rescored every month. <br>
+                                    <i> Rules of the portfolio:</i><br>
+                                    <li>We are only Long no Shorts.</li>
+                                    <li>Buys occur on the first trading day of each month.</li>
+                                    <li>When it is a buying day existing stocks are liquidated at the beginning of the day and the new portfolio is constructed at the end of the day.</li>
+                                    <li>Our portfolio always Long 30 stocks and they are equally weighted.</li>
                                     <br>
-                                    What are the parameters?<br>
+                                    <i>Rules of the strategy:</i><br>
+                                    <li>It’s a scoring system, there are 5 parameters and 5 scores associated for each ticker.</li>
+                                    <li>The final score is the summation of all the parameters for each stock.</li>
+                                    <li>The 30 highest scores are the stocks you buy for the month.</li>
+                                    <li>Stocks are rescored every month.</li>
+                                    <br>
+                                    <i>What are the parameters?</i><br>
                                     1.	Market Cap<br>
                                     2.	Earnings per Share (EPS)<br>
                                     3.	Trailing Price/Earnings ratio (P/E)<br>
@@ -80,21 +82,24 @@
                                     Parameter weightings can range from [-1, 1] and all weights are normalized once creating a strategy output.<br>
                                     
                                     <br>
-                                    What’s our database look like?<br>
-                                    -	We got 10 years of data ending in December 2021 for 2330 symbols<br>
-                                    -	OHLCV pricing and our 5 fundamental parameters are populated<br>
+                                    <i>What’s our database look like?</i><br>
+                                    <li>We got 10 years of data ending in December 2021 for 2330 symbols</li>
+                                    <li>OHLCV pricing and our 5 fundamental parameters are populated</li>
                                     <br>
+
+                                    <h4>Running the Experiment</h4>
                                     The years that we’ll be looking at are from 2016-2021. We’ll do 500 iterations for each year. Each iteration will contain unique weighting for its given parameter and its associated portfolio return.<br>
                                     <br>
-                                    Example of how it flows for 1 iteration over 1 year:<br>
-                                    1.	Random weights for parameters 1-5 are generated and then normalized.<br>
-                                    2.	These weights are then passed through to a script which generate the monthly buy signals for that given year. These signals are outputted in “csv” for tracking and passed through to the backtest.<br>
-                                    3.	The backtest takes the generated signals and calculates the total return. The portfolio is tracked and outputted as a “csv” for the given iteration. The total return is then passed back to the original script which generated the weights for all parameters.<br>
-                                    4.	The original script documents the iteration, parameter weightings, and its associated returns.<br>
-                                    5.	It then moves onto the next iteration to go through the process all over again until we hit 500 for the year.<br>
+                                    <strong>Example of flow for 1 iteration over 1 year:</strong><br>
+                                    <li>Script 1 produces random weights for parameters 1-5 which are then normalized.</li>
+                                    <li>These weights are then passed through to Script 2 which generates the monthly buy signals for that given year. These signals are outputted in “csv” for tracking and passed through to the Script 3 the backtest.</li>
+                                    <li>The backtest takes the generated signals and calculates the total return. The portfolio is tracked and outputted as a “.csv” for the given iteration. The total return is then passed back to Script 1.</li>
+                                    <li>Script 1 then documents the iteration, parameter weightings, and its associated returns.</li>
+                                    <li>It then moves onto the next iteration to go through the process all over again until we hit 500 iterations for the year.</li>
                                     <br>
                                     
-                                    At the end of it the results are documented using Pythons Bokeh data visualization library. Click below for the interactive data for all the years. The legends toggle so you can begin by deselecting all the parameters and then toggle one by one to find some type of visual trend. 
+                                    <h4>Results</h4>
+                                    At the end, the results are documented using Pythons Bokeh data visualization library. Click below for the interactive data for all the years. The legends toggle so you can begin by deselecting all parameters and then toggle one by one to search for a trend. 
                                     
                                     
                                     <center>
@@ -103,11 +108,12 @@
                                     <div style="text-align:center"> <a href="monte_carlo_parameters.html"> click image for results </a> </div> <br>
     
                                     
-                                    Going through the results there’s really no smoking gun and that is expected as we are looking at only 5 parameters and the number of iterations of 500 per year is quite small. The purpose of this project was to build the framework in which research can be conducted if I were to build myself a strategy. 
+                                    Going through the results there’s no smoking gun and that is expected as we are looking at only 5 parameters with 500 iterations per year, which is quite small. The purpose of this project was to build the framework in which research can be conducted when constructing a strategy through quantitative evidence. 
                                     
-
-
-
+                                    <br>
+                                    <br>
+                                    <h4>Note</h4>
+                                    The source code for this project can be found on my <a href="https://github.com/Roo541/Finance_monte_carlo"> GitHub </a>
 
 
                                     
