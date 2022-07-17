@@ -6,11 +6,19 @@
 -->
 <html>
 	<head>
-		<title>More Smirk Than Smile</title>
+		<title>Monte Carlo</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+        <meta charset="utf-8">
+        <title>Bokeh Plot</title>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.3.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
 	</head>
 	<body class="is-preload">
 
@@ -23,29 +31,130 @@
 					</header>
 
 				<!-- Main -->
-					<div id="main">
+
+					<div id="main">              
 						<style>
 							.image 
-							{border:0,
-							display: inline-block;
-							position:relative; }
-							.image img 
-							{display:block;
-							max-width:100%;
+							{display: block; 
+                                margin-left:auto;
+                                margin-right:auto;
+                                max-width:50%;
+                                max-height:50%;
 							}
 						</style>
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<h1>Finance Monte Carlo</h1>
+									<h3>Finance Monte Carlo</h3>
 								</header>
-                                <li><a href="monte_carlo_histogram.html"> Monte Carlo All Years Histogram Results </a></li>
+                                <center>
+                                    <a href="monte_carlo_histogram.html" class="image fit"><img src="images/mc_histogram_2.jpg" alt="" /></a> 
+                                </center>
+                               <div style="text-align:center"> <a href="monte_carlo_histogram.html"> click image for results </a> </div> <br>
+
+                                <p>
+                                    The purpose of this experiment was to create a research environment where you can search through parameters and see whether there is a relationship between that parameter and overall portfolio return. This experiment is based off a small sample size and it was really created to fulfill curiosity and build a frame work for a research environment. 
+
+                                    The hypothetical question is that I want to construct a portfolio for the year, and my buy signals depend on 5 parameters. Out of these 5 parameters which ones are more important than the others? There’s no exact answer to this but we can search for a qualitative understanding by running a monte carlo simulation. Through many iterations we can hope to find some consistency in parameter weighting and overall portfolio return. Backtesting year by year with random weighting of each parameter gives a unique portfolio return. Through many iterations and over different years, we can search for a qualitative trend for a given parameter. 
+                                    
+                                    Let’s define some rules for our strategy. These rules are mainly based off my personal time at Haugen Equity Signals and a book called “The Little Book That Beats the Market” by Joel Greenblatt. The frequency of trades are based off Haugen as they sold signals to clients on a monthly basis. The strategy is based on the book because it’s simple enough. <br>
+                                    <br>
+                                    Rules of the portfolio:<br>
+                                    1.	We are only Long no Shorts.<br>
+                                    2.	Buys occur on the first trading day of each month.<br>
+                                    3.	When it is a buying day existing stocks are liquidated at the beginning of the day and the new portfolio is constructed at the end of the day.<br>
+                                    4.	Our portfolio always Long 30 stocks and they are equally weighted.<br>
+                                    <br>
+                                    Rules of the strategy:<br>
+                                    1.	It’s a scoring system, there are 5 parameters and 5 scores associated for each ticker.<br>
+                                    2.	The final score is the summation of all the parameters for each stock.<br>
+                                    3.	The 30 highest scores are the stocks you buy for the month.<br>
+                                    4.	Stocks are rescored every month. <br>
+                                    <br>
+                                    What are the parameters?<br>
+                                    1.	Market Cap<br>
+                                    2.	Earnings per Share (EPS)<br>
+                                    3.	Trailing Price/Earnings ratio (P/E)<br>
+                                    4.	Most Recent Quarter Price/Book ratio (P/B)<br>
+                                    5.	Trailing Price/Sales ratio (P/S)<br>
+                                    Parameter weightings can range from [-1, 1] and all weights are normalized once creating a strategy output.<br>
+                                    
+                                    <br>
+                                    What’s our database look like?<br>
+                                    -	We got 10 years of data ending in December 2021 for 2330 symbols<br>
+                                    -	OHLCV pricing and our 5 fundamental parameters are populated<br>
+                                    <br>
+                                    The years that we’ll be looking at are from 2016-2021. We’ll do 500 iterations for each year. Each iteration will contain unique weighting for its given parameter and its associated portfolio return.<br>
+                                    <br>
+                                    Example of how it flows for 1 iteration over 1 year:<br>
+                                    1.	Random weights for parameters 1-5 are generated and then normalized.<br>
+                                    2.	These weights are then passed through to a script which generate the monthly buy signals for that given year. These signals are outputted in “csv” for tracking and passed through to the backtest.<br>
+                                    3.	The backtest takes the generated signals and calculates the total return. The portfolio is tracked and outputted as a “csv” for the given iteration. The total return is then passed back to the original script which generated the weights for all parameters.<br>
+                                    4.	The original script documents the iteration, parameter weightings, and its associated returns.<br>
+                                    5.	It then moves onto the next iteration to go through the process all over again until we hit 500 for the year.<br>
+                                    <br>
+                                    
+                                    At the end of it the results are documented using Pythons Bokeh data visualization library. Click below for the interactive data for all the years. The legends toggle so you can begin by deselecting all the parameters and then toggle one by one to find some type of visual trend. 
+                                    
+                                    
+                                    <center>
+                                    <a href="monte_carlo_parameters.html" class="image fit"><img src="images/mc_parameters.jpg" alt="" /></a>
+                                    </center>
+                                    <div style="text-align:center"> <a href="monte_carlo_parameters.html"> click image for results </a> </div> <br>
+    
+                                    
+                                    Going through the results there’s really no smoking gun and that is expected as we are looking at only 5 parameters and the number of iterations of 500 per year is quite small. The purpose of this project was to build the framework in which research can be conducted if I were to build myself a strategy. 
+                                    
+
+
+
+
+
+                                    
+                                </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 								
 							</section>
 
 					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 				
 				<!-- Copyright -->
