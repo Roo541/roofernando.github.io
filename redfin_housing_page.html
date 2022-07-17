@@ -55,9 +55,21 @@
 								</header>
 
 								<!-- Text stuff -->
-									<li class="active"><a href="rdfn_mom.html">Month over Month Percent Price Change by County </a></li>
-									<li class="active"><a href="rdfn_yoy.html">Year over Year Percent Price Change by</a></li>
-			
+								<h4>What is this?</h4>
+								Redfin provides housing data for us, the consumer. What I've done here is bulk download their most recent monthly data, cleaned it up, and put into
+								a MySQL dB, which I'll continue to update. 
+								With that dB I can utilize Pythons Bokeh library to show a data visualization of what is currently happening in terms of median sales pricing by County. 
+								A script was written to cross reference the data between the MySQL dB and geographical parameters required to render a Bokeh map. To avoid any noticable outliers 
+								the script only takes into account counties which have sold more than 100 homes during the most recent month. 
+								New monthly data comes out once a month, typically 2 weeks into the following month. I'll try to keep this most up to date as possible. <br>
+								<br>
+								<h4>Click on the links below to launch a chart</h4>
+								<strong>June 30, 2022</strong>
+								<li class="active"><a href="rdfn_plots/rdfn_mom.html">Month over Month median sale price percentage change by County </a></li>
+								<li class="active"><a href="rdfn_plots/rdfn_yoy.html">Year over Year median sale price percentage change by County</a></li>
+								<strong>May 31, 2022</strong>
+								<li class="active"><a href="rdfn_plots/May_mom.html">Month over Month median sale price percentage change by County </a></li>
+								<li class="active"><a href="rdfn_plots/May_yoy.html">Year over Year median sale price percentage change by County</a></li>
 			
 							</section>
 
