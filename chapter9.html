@@ -1,0 +1,442 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Risk Measurement II</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Back Home</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<style>
+							.image 
+							{border:0,
+							display: inline-block;
+							position:relative; }
+							.image img 
+							{display:block;
+							max-width:100%;
+							}
+						</style>
+						<style>
+							.tab4{
+								tab-size: 8;
+							}
+
+						</style>
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h3>Chapter 9: Risk Measurement II</h3>
+								</header>
+						
+						<p>
+							<strong>Summary</strong> <br>
+							
+						</p>
+						<p>
+						<strong>1.</strong> An underlying contract is currently trading at a price of 75. If there are no interest considerations
+						(interest rates are zero), for each pair of options choose the correct answer.<br>
+						<strong>a.</strong> If the underlying price changes, but all other market conditions remain unchanged, which option's price will change the most?
+						<pre class = "tab4"><strong>&#8544;</strong> a 1-month 75 call, a 1-month 80 call  <strong>&#8545;</strong> a 1-month 75 put, a 1-month 80 put <strong>&#8546;</strong> a 1-month 80 put, a 3-month 80 put</pre>
+						Answer: III, because those contracts are ITM and have the highest delta.<br>
+						<br>
+						<strong>b.</strong> If the underlying price changes, but all other market conditions remain unchanged, which option's delta will change the most?
+						<pre class = "tab4"><strong>&#8544;</strong> a 1-month 75 call, a 1-month 80 call  <strong>&#8545;</strong> a 1-month 75 call, a 3-month 75 call <strong>&#8546;</strong> a 1-month 65 put, a 3-month 65 put</pre>
+						Answer: II, because the delta changes accordingly to the gamma and gamma is highest for ATM contracts. <br>
+						
+						<br>
+						<strong>c.</strong> If the implied volatility changes by the same amount for all options, but all other market 
+						conditions remain unchanged, which option's price will change the most?
+						<pre class = "tab4"><strong>&#8544;</strong> a 3-month 70 put, a 3-month 75 put  <strong>&#8545;</strong> a 1-month 75 put, a 3-month 75 put <strong>&#8546;</strong> a 1-month 85 call, a 3-month 85 call</pre>
+						Answer: II, because vega is the change in contract value with respect to implied volatility, and it is higest for ATM contracts.<br>
+						<br>
+
+						<strong>d.</strong> If two weeks pass with no change in the price of the underlying contract, but all other market conditions
+						remain unchanged, which option's price will change the most?
+						<pre class = "tab4"><strong>&#8544;</strong> a 1-month 70 call, a 1-month 75 call  <strong>&#8545;</strong> a 1-month 75 call, a 3-month 75 call <strong>&#8546;</strong> a 1-month 65 put, a 3-month 65 put</pre>
+						Answer: II, because theta ATM is largest.<br>
+						<br>
+
+						<strong>e.</strong> If the underlying contract is stock, and interest rates change by the same amount for all expiration months,
+						but all other market conditions remain unchanged, which option's price will change the most?
+						<pre class = "tab4"><strong>&#8544;</strong> a 3-month 70 call, a 3-month 75 call  <strong>&#8545;</strong> a 1-month 80 call, a 3-month 80 call <strong>&#8546;</strong> a 1-month 70 put, a 1-month 75 put</pre>
+						Answer: I, interest rates affect the time of expiration the most.<br>
+						<br>
+
+						<strong>f.</strong> If the underlying contract is a stock that is expected to pay a dividend in two months, if the 
+						dividend is changed but all other market conditions remain unchanged, which option's price will change the most?
+						<pre class = "tab4"><strong>&#8544;</strong> a 3-month 70 call, a 3-month 75 call  <strong>&#8545;</strong> a 1-month 80 call, a 3-month 80 call <strong>&#8546;</strong> a 3-month 75 put, a 3-month 80 put</pre>
+						Answer: III, dividend affects delta the most because of the price change. And dividends cause the puts to be more ITM. <br>
+						</p>
+						
+						<p>
+						<strong>2.</strong> For each option below, with the given change in market conditions is each risk measure (delta, gamma, theta, vega),
+						in absolute value, getting bigger (+), smaller (-), or staying about the same (0)?<br><br>
+						underlying price = 50 <br>
+						time to expiration = 3 months <br>
+						interest rate = 0 <br><br>
+						<strong>a.</strong> The underlying price falls to 45. 
+						\[
+						\begin{array}{|c|c||c|c|c|}
+						\hline
+						  \text{} & \text{Delta} & \text{Gamma} & \text{Theta} & \text{Vega} \\ 
+						\hline
+						\text{40 call} & - & + & + & + \\
+						\hline
+						\hline
+						\text{50 call} & - & - & - & - \\
+						\hline
+						\hline
+						\text{60 call} & - & - & - & - \\
+						\hline
+						\hline
+						\text{40 put} & + & + & + & + \\
+						\hline
+						\hline
+						\text{50 put} & + & - & - & - \\
+						\hline
+						\hline
+						\text{60 put} & + & - & - & - \\
+						\hline
+						\end{array}
+						\]
+
+						<strong>b.</strong> The underlying price rises to 55. 
+						\[
+						\begin{array}{|c|c||c|c|c|}
+						\hline
+						  \text{} & \text{Delta} & \text{Gamma} & \text{Theta} & \text{Vega} \\ 
+						\hline
+						\text{40 call} & + & - & - & - \\
+						\hline
+						\hline
+						\text{50 call} & + & - & - & - \\
+						\hline
+						\hline
+						\text{60 call} & + & + & + & + \\
+						\hline
+						\hline
+						\text{40 put} & - & - & - & - \\
+						\hline
+						\hline
+						\text{50 put} & - & - & - & - \\
+						\hline
+						\hline
+						\text{60 put} & - & + & + & + \\
+						\hline
+						\end{array}
+						\]
+
+						<strong>c.</strong> Two weeks pass. 
+						\[
+						\begin{array}{|c|c||c|c|c|}
+						\hline
+						  \text{} & \text{Delta} & \text{Gamma} & \text{Theta} & \text{Vega} \\ 
+						\hline
+						\text{40 call} & + & - & - & - \\
+						\hline
+						\hline
+						\text{50 call} & 0 & + & + & - \\
+						\hline
+						\hline
+						\text{60 call} & - & - & - & - \\
+						\hline
+						\hline
+						\text{40 put} & - & - & - & - \\
+						\hline
+						\hline
+						\text{50 put} & 0 & + & + & - \\
+						\hline
+						\hline
+						\text{60 put} & + & - & - & - \\
+						\hline
+						\end{array}
+						\]
+
+						<strong>d.</strong> Volatility falls. 
+						\[
+						\begin{array}{|c|c||c|c|c|}
+						\hline
+						  \text{} & \text{Delta} & \text{Gamma} & \text{Theta} & \text{Vega} \\ 
+						\hline
+						\text{40 call} & + & - & - & - \\
+						\hline
+						\hline
+						\text{50 call} & 0 & + & - & 0 \\
+						\hline
+						\hline
+						\text{60 call} & - & - & - & - \\
+						\hline
+						\hline
+						\text{40 put} & - & - & - & - \\
+						\hline
+						\hline
+						\text{50 put} & 0 & + & - & 0 \\
+						\hline
+						\hline
+						\text{60 put} & + & - & - & - \\
+						\hline
+						\end{array}
+						\]
+						
+						<strong>e.</strong> Volatility rises. 
+						\[
+						\begin{array}{|c|c||c|c|c|}
+						\hline
+						  \text{} & \text{Delta} & \text{Gamma} & \text{Theta} & \text{Vega} \\ 
+						\hline
+						\text{40 call} & - & + & + & + \\
+						\hline
+						\hline
+						\text{50 call} & 0 & - & + & 0 \\
+						\hline
+						\hline
+						\text{60 call} & + & + & + & + \\
+						\hline
+						\hline
+						\text{40 put} & + & + & + & + \\
+						\hline
+						\hline
+						\text{50 put} & 0 & - & + & 0 \\
+						\hline
+						\hline
+						\text{60 put} & - & + & + & + \\
+						\hline
+						\end{array}
+						\]
+						</p>
+						
+						<p>
+						<strong>3. </strong><br>
+						Underlying stock price = 100 <br>
+						time to expiration = 3 months <br>
+						interest rate = 6.00% <br>
+						volatility = 20%<br>
+						<center>
+						<a class="image"><img src="images/Textbook_Work_Throughs/exercises/9.3.jpg" width="600" height="auto" /></a>
+						</center>
+						In the above table, and for purposes of this exercise, the delta and gamma values are expressed in the decimal format.
+						 Delta values for calls range from 0 to 1.00, and for puts from 0 to -1.00.<br>
+						Using the table of values above, try to answer the following questions:<br>
+
+						<strong>a. </strong>If volatility falls to 18%, what will be the new delta values of the 90 call and the 100 put?<br>
+						
+						$$ \text{90 Call} $$
+						$$ Vanna = \frac{\partial\Delta}{\partial\sigma} = -0.010 $$
+						$$ \Delta_{new} = \Delta_{old} - \Delta Vol \times \frac{\partial\Delta}{\partial\sigma} $$ 
+						$$ \Delta_{new} = 0.895 - 2 \times (-0.010) = 0.915 $$
+						$$ \\ $$
+						$$ \text{100 Put} $$
+						$$ \Delta_{new} = -0.417 $$
+						$$ \text{Note: When volatility decreases it causes delta to move away from 50/-50.} $$
+
+						<strong>b. </strong> If 10 days pass, what will be the new delta values of the 90 put and the 100 call?<br>
+						$$ \text{90 Put} $$
+						$$ Charm = \frac{\partial\Delta}{\partial\Theta} = 0.0009 $$
+						$$ \Delta_{new} = \Delta_{old} + \Delta Time \times \frac{\partial\Delta}{\partial\Theta} = -0.096 $$
+						$$ \\ $$
+						$$ \text{100 Call} $$
+						$$ Charm = \frac{\partial\Delta}{\partial\Theta} = -0.0004 $$
+						$$ \Delta_{new} = \Delta_{old} + \Delta Time \times \frac{\partial\Delta}{\partial\Theta} = 0.575$$
+						$$ \text{Note: As time passes the OTM put becomes less likely to expire ITM causing} $$ 
+						$$ \text{decrease in magnitude of delta. The ATM Call gets closer to 50 or kind of stays the same.} $$
+
+						<strong>c. </strong> If 10 days pass, what will be the new gamma values of the 90 call and the 100 put? 
+						$$ \text{90 Call} $$
+						$$ color = \frac{\partial\Gamma}{\partial\Theta} = 0.0002$$
+						$$ \Gamma_{new} = \Gamma_{old} + \Delta Time \times \frac{\partial\Gamma}{\partial\Theta} = 0.018$$
+						$$ \\ $$
+						$$ \text{100 Put} $$
+						$$ color = \frac{\partial\Gamma}{\partial\Theta} = 0.0002$$
+						$$ \Gamma_{new} = \Gamma_{old} + \Delta Time \times \frac{\partial\Gamma}{\partial\Theta} = 0.041$$
+
+						<strong>d. </strong> If the underlying price falls to 96, what will be the new vega values of the 90 put and the 110 call? 
+						$$ \text{90 Put} $$
+						$$ Vanna = \frac{\partial Vega}{\partial S} = -0.010$$
+						$$ Vega_{new} = Vega_{old} + \Delta S \times \frac{\partial Vega}{\partial S} = 0.131  $$
+						$$ \\ $$
+						$$ \text{110 Call} $$
+						$$ Vanna = \frac{\partial Vega}{\partial S} = 0.013$$
+						$$ Vega_{new} = Vega_{old} + \Delta S \times \frac{\partial Vega}{\partial S} = 0.098  $$
+
+						<strong>e. </strong> If the underlying price rises to 103, what will be the new theta values of the 90 call and the 110 put?
+						$$ \text{90 Call} $$
+						$$ Charm = \frac{\partial \Theta}{\partial S} = 0.0009$$
+						$$ \Theta_{new} = \Theta_{old} + \Delta S \times \frac{\partial \Theta}{\partial S} = -0.02 $$
+						$$ \\ $$
+						$$ \text{110 Put} $$
+						$$ Charm = \frac{\partial \Theta}{\partial S} = -0.0019$$
+						$$ \Theta_{new} = \Theta_{old} + \Delta S \times \frac{\partial \Theta}{\partial S} = -0.0079  $$
+
+						<strong>f. </strong> If ten days pass, what will be the new vega values of the 100 call and 110 put?
+						$$ \text{100 Call} $$
+						$$ \text{Vega decay} = \frac{\partial Vega}{\partial\Theta} = -0.0010$$
+						$$ Vega_{new} = Vega_{old} + \Delta time \times \frac{\partial Vega}{\partial \Theta} = 0.185 $$
+						$$ \\ $$
+						$$ \text{110 Put} $$
+						$$ \text{Vega decay} = \frac{\partial Vega}{\partial\Theta} = -0.0015$$
+						$$ Vega_{new} = Vega_{old} + \Delta time \times \frac{\partial Vega}{\partial \Theta} = 0.135$$
+
+						<strong>g. </strong> If volatility rises to 25%, what will be the new vega values of the 90 put and the 110 call?
+						$$ \text{90 Put} $$
+						$$ \text{Volga} = \frac{\partial Vega}{\partial\sigma} = 0.0066$$
+						$$ Vega_{new} = Vega_{old} + \Delta \sigma \times \frac{\partial Vega}{\partial \sigma} = 0.121 $$
+						$$ \\ $$
+						$$ \text{110 Call} $$
+						$$ \text{Volga} = \frac{\partial Vega}{\partial\sigma} = 0.0048$$
+						$$ Vega_{new} = Vega_{old} + \Delta \sigma \times \frac{\partial Vega}{\partial \sigma} = 0.174 $$
+
+						</p>
+					
+					<p>
+					<strong>4. </strong> When a sensitivity changes for a given change in market conditions, we can approximate the impact 
+					of that sensitivity by taking the average value of the sensitivity over the given change. (Recall that this was the method
+					used in question 4 of the Risk Meashurement section when estimating the effect of the delta and gamma together.)<br><br>
+					<strong>a. </strong> If volatility rises to 25%, what will be the approximate theoretical values of the 90 put and 100 call?
+					$$ \text{90 Put} $$
+					$$ \text{Volga} = \frac{\partial Vega}{\partial\sigma} = 0.0066$$
+					$$ Vega_{i} = 0.091 $$
+					$$ \overline{Vega} = \frac{Vega_{i} + Vega_{f}}{2} $$
+					$$ Vega_{f} = Vega_{i} + \Delta\sigma \times \frac{\partial Vega}{\partial\sigma} = 0.124 $$
+					$$ TV_{f} = TV_{i} + \Delta\sigma \times \overline{Vega} = 1.0575 $$
+					$$ \\ $$
+					$$ \text{100 Call} $$
+					$$ \text{Volga} = \frac{\partial Vega}{\partial\sigma} = 0.0002$$
+					$$ Vega_{i} = 0.195 $$
+					$$ \overline{Vega} = \frac{Vega_{i} + Vega_{f}}{2} $$
+					$$ Vega_{f} = Vega_{i} + \Delta\sigma \times \frac{\partial Vega}{\partial\sigma} = 0.196 $$
+					$$ TV_{f} = TV_{i} + \Delta\sigma \times \overline{Vega} = 5.7175 $$
+
+					<strong>b. </strong> If the stock price rises to 107, what will be the new gamma values of the 100 call and 110 put?
+					$$ \text{100 Call} $$
+					$$ \text{Speed} = \frac{\partial \Gamma}{\partial S} = -0.0012 $$
+					$$ \Gamma_{i} = 0.039 $$
+					$$ \Gamma_{f} = \Gamma_{i} + \Delta S \times \frac{\partial \Gamma}{\partial S} = 0.0306 $$
+					$$ \\ $$
+					$$ \text{110 Put} $$
+					$$ \text{Speed} = \frac{\partial \Gamma}{\partial S} = 0.0020 $$
+					$$ \Gamma_{i} = 0.030 $$
+					$$ \Gamma_{f} = \Gamma_{i} + \Delta S \times \frac{\partial \Gamma}{\partial S} = 0.044 $$
+					
+					<strong>c. </strong> If the stock price rises to 107, what will be the new delta values of the 100 call and the 110 put? 
+					$$ \text{100 Call} $$
+					$$ \Delta_{i} = 0.579 $$
+					$$ \Gamma_{i} = 0.039 $$
+					$$ \Delta_{f} = \Delta_{i} + \Delta S \times \overline{\Gamma} = 0.8226 $$
+					$$ \\ $$
+					$$ \text{110 Put} $$
+					$$ \Delta_{i} = -0.775 $$
+					$$ \Gamma_{i} = 0.030 $$
+					$$ \Delta_{f} = \Delta_{i} + \Delta S \times \overline{\Gamma} = 0.8226 $$
+					$$ \text{Note: use the previous problems } \Gamma_{f} \text{ to calculate } \overline{\Gamma}. \Delta \text{ is calculated with averaging } \Gamma $$
+				
+					<strong>d. </strong> Is the stock price rises to 107, what will be the approximate theoretical values of the 100 call and the 110 put? 
+					$$ \text{100 Call} $$
+					$$ \Delta_{i} = 0.579 $$
+					$$ \Delta_{f} = 0.8226 $$
+					$$ \overline{\Delta} = 0.7008 $$
+					$$ TV_{f} = TV_{i} + \Delta S \times \overline{\Delta} = 9.65 $$
+					$$ \\ $$
+					$$ \text{110 Put} $$
+					$$ \Delta_{i} = -0.775 $$
+					$$ \Delta_{f} = -0.516 $$
+					$$ \overline{\Delta} = -0.6455$$
+					$$ TV_{f} = TV_{i} + \Delta S \times \overline{\Delta} = 5.09 $$
+					$$ \text{Note: The new theoretical value was calculated using the average delta as we know that delta is not constant }$$
+					$$ \text{as market conditions change. Averaging gets us a better approximation.} $$
+					</p>
+					
+					<p>
+					<strong>5. </strong> An option's elasticity is defined as the percent change in the option's value for a one percent change in the 
+					price of the underlying contract. 
+					\[
+						\begin{array}{|c|c|c|c|}
+						\hline
+						\text{Call Value} & \text{Call Elasticity} & \text{Put Value} & \text{Put Elasticity}\\ 
+						\hline
+						\text{6.84} & \text{5.25} & \text{2.30} & \text{-2.90}\\ 
+						\hline
+						\end{array} 
+					\] 
+					<strong>a. </strong> If the price of the underlying is defined as the percent change in the option's value for a one percent 
+					change in the price of the underlying contract. 
+					$$ \lambda = \frac{\Delta V}{\Delta S} \text{ in terms of %} $$
+					$$ \Delta V = \lambda \times \Delta S $$
+					$$ V_{f} = V_{i} + V_{i} \times (\lambda \times \Delta S)$$
+					$$ \\  $$
+					$$ \text{Call Value} $$
+					$$ V_{f} = 7.85 $$
+					$$ \\ $$
+					$$ \text{Put value} $$
+					$$ V_{f} = 2.11 $$
+					
+					<strong>b. </strong> What are the delta values of the call and put?
+					$$ \Delta = \frac{\partial V}{\partial S} \approx \frac{V_{f} - V_{i}}{S_{f} - S_{i}}$$
+					$$ \Delta_{call} = 0.66 $$
+					$$ \Delta_{put} = -0.12 $$
+
+					<strong>c. </strong> How does an option's elasticity relate to its delta?
+					$$ \lambda = \frac{\partial V}{\partial S} = \frac{\frac{\partial V}{V}}{\frac{\partial S}{S}} = \frac{S}{V} \times \Delta $$
+					$$ \lambda \text{ is the leverage} $$
+					</p>
+
+					<p>
+					<strong>6. </strong> Option trades are sometimes "tied to" a specific underlying price. That is, a customer may want to 
+					trade an option and hedge it at an underlying prcie different than the current underlying price.<br>
+					Consider this situation: <br><br>
+					stock price = 73.50 <br>
+					time to expiration = 2 months <br>
+					interest rate = 6.00% <br>
+					dividend = 0 <br>
+					volatility = 25% <br>
+					theoretical value of the 75 call = 2.64 <br>
+					delta of the 75 call = 48.00 <br>
+					gamma of the 75 call = 5.3 <br><br>
+
+					<strong>a. </strong> What will be the option's approximate delta and theoretical value if the underlying stock price rises to 75.00?
+
+
+
+
+					</p>
+
+					</div>
+
+				
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
