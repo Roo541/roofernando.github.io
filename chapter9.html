@@ -412,10 +412,23 @@
 					delta of the 75 call = 48.00 <br>
 					gamma of the 75 call = 5.3 <br><br>
 
-					<strong>a. </strong> What will be the option's approximate delta and theoretical value if the underlying stock price rises to 75.00?
+					<strong>a. </strong> What will be the option's approximate delta and theoretical value if the underlying stock price rises to 75.00?<br>
+					$$ \Delta_{f} = \Delta_{i} + \Delta S \times \Gamma_{i} $$
+					$$ TV_{f} = TV_{i} + \Delta S \times \overline{\Delta} $$
+					$$ \Delta_{f} = 55.95 $$
+					$$ TV_{f} = 3.42 $$
+					
+					<strong>b. </strong> Using the delta and gamma, in general what should be the new value of an option if the price of the 
+					underlying contract changes?
+					$$ TV_{f} = TV_{i} + \Delta S \times \overline{\Delta} $$
+					$$ \overline{\Delta} = \frac{\Delta_{f} +\Delta_{i}}{2} $$
+					$$ \Delta_{f} = \Delta_{i} + \Delta S \times \Gamma_{i} $$
+					$$ TV_{f} = TV_{i} + \Delta S \times (\frac{2 \times \Delta_{i} + \Delta S \times \Gamma}{2}) $$
 
-
-
+					<strong>c. </strong> Suppose a customer wants to buy a 75 call tied to an underlying price of 75.00. (Perhaps the customer wants the option 
+					to be at-the-money.) If a market-maker takes the other side of this trade, what should be a fair price for the 75 call?
+					$$ TV_{f} = 3.42$$
+					
 
 					</p>
 
