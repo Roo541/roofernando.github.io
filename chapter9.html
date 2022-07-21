@@ -428,10 +428,116 @@
 					<strong>c. </strong> Suppose a customer wants to buy a 75 call tied to an underlying price of 75.00. (Perhaps the customer wants the option 
 					to be at-the-money.) If a market-maker takes the other side of this trade, what should be a fair price for the 75 call?
 					$$ TV_{f} = 3.42$$
-					
 
 					</p>
 
+					<p>
+					<strong>7. </strong> <br>
+					<strong>A. </strong> the price of the underlying stock rises<br>
+					<strong>B. </strong> volatility rises<br>
+					<strong>C. </strong> time passes<br>
+					<strong>D. </strong> interest rate rises<br>
+					<strong>E. </strong> the dividend is increased<br>
+					If the underlying contract is stock, for the questions below fill in all appropriate choices from the above list:<br>
+					<strong>a. </strong> Which of the above changes in market conditions will cause the delta of an at-the-money call to increase?<br>
+					Answer: A - price increase causes delta to approach 1. D <br><br>
+
+					<strong>b. </strong> Which of the above changes in market conditions will cause the delta of an out-of-the-money put to 
+					increase (become more negative)?<br>
+					Answer: B - Volatility rising will cause the out of the money put to approach -50. E because the stock will decrease in price more 
+					causing a delta increase in magnitude for the put.<br><br>
+
+					<strong>c. </strong> Which of the above changes in market conditions will cause the gamma of an at-the-money call to increase? <br>
+					Answer: C - As time passes gamma gets very large. <br><br>
+
+					<strong>d. </strong> Which of the avove changes in market conditions will cause the gamma of a deeply in-the-money put to increase?<br>
+					Answer: A - As the price increases the curve shifts causing an increase in gamma. B because the volatility rise delta increases from -1 which 
+					means that gamma increases as well. D interest rates rise.<br><br>
+					
+					<strong>e. </strong> Which of the above changes in market conditions will cause the theta of an at-the-money put to increase? <br>
+					Answer: B - as volatility increases theta increases linearly. C because ATM theta values approach infinity as time passes.<br><br>
+					
+					<strong>f. </strong> Which of the above changes in market conditions will cause the vega of an out-of-the-money call to increase?<br>
+					Answer: A - Yes, a price increase allows the out of the money call to be more likely to expire in the money. B because as implied volatility
+					increases so does vega. D interest rates rise.<br><br>
+					</p>
+
+					<p>
+					<strong>8. </strong><br>
+					Futures price = 149.65<br>
+					time to August expiration = 8 weeks <br>
+					annual volatility = 24.20% <br>
+					You have the following position:<br>
+					-32 August 140 puts<br>
+					+30 August 160 calls<br>
+					-15 August futures contracts<br>
+					with the options having these risk sensitivities:<br>
+					\[
+						\begin{array}{|c|c|c|c|c|}
+						\hline
+						\text{Option} & \text{Delta} & \text{Gamma} & \text{Theta} & \text{Vega}\\ 
+						\hline
+						\text{August 140 put} & \text{-22.6} & \text{2.12} & \text{-0.0381} & \text{0.176}\\ 
+						\hline
+						\hline
+						\text{August 160 call} & \text{25.5} & \text{2.26} & \text{-0.0407} & \text{0.188}\\ 
+						\hline
+						\end{array} 
+					\] 
+
+					<strong>a. </strong> What is your total delta, gamma, theta, and vega position?
+					Answer:<br>
+					\[
+						\begin{array}{|c|c|c|c|}
+						\hline
+						\text{Delta} & \text{Gamma} & \text{Theta} & \text{Vega}\\ 
+						\hline
+						\text{-11.8} & \text{-0.04} & \text{-0.0018} & \text{0.008}\\ 
+						\hline
+						\end{array} 
+					\] 
+					$$\text{Note: Sum up the deltas as both the options contracts are positive delta and the selling underlying is negative} $$
+					$$ \text{The underlying for gamma, theta, and vega are zero. Only the contracts are used for total values.} $$<br>
+
+					<strong>b. </strong> Considering only the delta, gamma, theta, and vega, how risky do you think this position is?<br>
+					Answer: The position does not look to risky as all the greeks are near zero or just about neutral. Meaning contract value does not change 
+					with movement of the underlying.<br><br>
+
+					<strong>c. </strong> Is your conclusion in question b reasonable?<br>
+					Answer: Seems reasonable at the moment, but market conditions change and these parameters will change as well. <br><br>
+
+					<strong>d. </strong> What will happen to your delta, gamma, and vega position (become positive or less negative, become more negative 
+					or less positive, stay about the same) if the futures price rises while all other market conditions remain unchanged?<br>
+					Answer: Delta will be positive, gamma will be positive, theta will be positive, and vega will be positive. <br><br>
+
+					<strong>e. </strong> What will happen to your delta, gamma, and vega position (become positive or less negative, become more negative 
+					or less positive, stay about the same) if the futures price falls while all other market conditions remain unchanged?<br>
+					Answer: Delta will be more positive, gamma more negative, and vega more negative. <br><br>
+
+					<strong>f. </strong> What will happen to your delta position (become positive or less negative, become negative or less positive,
+					stay about the same) if volatility increases to 28% while all other market conditions remain unchanged? <br>
+					Answer: Delta will be more positive.<br><br>
+
+					<strong>g. </strong> What will happen to your delta position (become positive or less negative, become negative or less positive,
+					stay about the same) if three weeks pass while all other market conditions remain unchanged? <br>
+					Answer: Delta will be more negative.<br><br>
+
+					<strong>h. </strong> Suppose the futures contract makes a very large downward move. What is your maximum downside delta?<br>
+					Answer: On a very large movement downward the 160 call delta goes to 0. The 140 put goes to +100 because we sold. 
+					$$ \Delta_{downside} = \Delta_{put sold} + \Delta_{call buy} + \Delta_{underlying} = 32 \times 100 - 1500 = +1700 $$<br><br>
+
+					<strong>i. </strong> Suppose the futures contract makes a very large upward move. What is your maximum upside delta?<br>
+					Answer: On a very large movement upward the 140 put delta goes to 0. 
+					$$ \Delta_{upside} = \Delta_{put sold} + \Delta_{call buy} + \Delta_{underlying} = 30 \times 100 - 1500 = +1500 $$
+					
+					<strong>j. </strong> Rank the order in which the following combination of market conditions will most help or hurt 
+					your position (1 = helps the most; 4 = hurts the most).<br>
+					Answer:<br>
+					1. the futures price rises quickly to 160 and implied volatility rises to 26.20%<br>
+					2. the futures price falls slowly to 140 and implied volatility falls to 22.20%<br>
+					3. the futures price rises slowly to 160 and implied volatility falls to 22.20%<br>
+					4. the futures price falls quickly to 140 and implied volatility rises to 26.20%<br>
+					</p>
 					</div>
 
 				
