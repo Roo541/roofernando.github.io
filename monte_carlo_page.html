@@ -56,20 +56,20 @@
                                     <h4>Introduction</h4>
                                     The purpose of this experiment was to create a research environment where you can search through parameters and see whether there is a relationship between that parameter and overall portfolio return. This experiment is based off a small sample size and it was created to fulfill curiosity and build a frame work for a research environment. 
 
-                                    The hypothetical question was that I wanted to construct a portfolio for the year, and my buy signals are dependent on 5 parameters. Out of these 5 parameters which ones are more important than the others? There’s no exact answer to this, but we can search for a qualitative understanding by running a monte carlo simulation of many constructed portfolios. Through a large enough amount of iterations we hope to find some relationship between parameter weighting and overall portfolio return. Backtesting year by year with random weighting of each parameter gives a unique portfolio return. When doing this over different years, we can search for a qualitative trend for a given parameter. <br>
+                                    The hypothetical question was that I wanted to construct a portfolio for the year, and my buy signals are dependent on 5 parameters. Out of these 5 parameters which ones are more important than the others? There’s no exact answer to this, but we can search for a qualitative understanding by running a monte carlo simulation of many constructed portfolios with different parameter weighting. Through a large enough amount of iterations we hope to find some relationship between parameter weighting and overall portfolio return. Backtesting year by year with random weighting of each parameter gives a unique portfolio return. When doing this over different years, we can search for a qualitative trend for a given parameter. <br>
                                     <br>
                                     <h4>Scope</h4>
-                                    First, let’s define some rules for our strategy. These rules are mainly based off my personal time at Haugen Equity Signals and a book called “The Little Book That Beats the Market” by Joel Greenblatt. The frequency of trades are based off Haugen as they sold signals to clients on a monthly basis, and the strategy is simillar to what is found in book because it’s simple enough. <br>
+                                    First, let’s define some rules for our strategy. These rules are mainly based off my personal time at Haugen Equity Signals and a book called “The Little Book That Beats the Market” by Joel Greenblatt. The frequency of trades are based off Haugen as they sold signals to clients on a monthly basis, and the strategy is simillar to what is found in the book because it’s simple enough. <br>
                                     <br>
                                     <i> Rules of the portfolio:</i><br>
                                     <li>We are only Long no Shorts.</li>
                                     <li>Buys occur on the first trading day of each month.</li>
                                     <li>When it is a buying day existing stocks are liquidated at the beginning of the day and the new portfolio is constructed at the end of the day.</li>
-                                    <li>Our portfolio always Long 30 stocks and they are equally weighted.</li>
+                                    <li>Our portfolio is always Long 30 stocks and they are equally weighted.</li>
                                     <br>
                                     <i>Rules of the strategy:</i><br>
                                     <li>It’s a scoring system, there are 5 parameters and 5 scores associated for each ticker.</li>
-                                    <li>The final score is the summation of all the parameters for each stock.</li>
+                                    <li>The final score is the summation of all the parameters for that particular stock.</li>
                                     <li>The 30 highest scores are the stocks you buy for the month.</li>
                                     <li>Stocks are rescored every month.</li>
                                     <br>
@@ -90,11 +90,11 @@
                                     <h4>Running the Experiment</h4>
                                     The years that we’ll be looking at are from 2016-2021. We’ll do 500 iterations for each year. Each iteration will contain unique weighting for its given parameter and its associated portfolio return.<br>
                                     <br>
-                                    <strong>Example of flow for 1 iteration over 1 year:</strong><br>
+                                    <strong>Example of the flow for 1 iteration over 1 year:</strong><br>
                                     <li>Script 1 produces random weights for parameters 1-5 which are then normalized.</li>
-                                    <li>These weights are then passed through to Script 2 which generates the monthly buy signals for that given year. These signals are outputted in “csv” for tracking and passed through to the Script 3 the backtest.</li>
-                                    <li>The backtest takes the generated signals and calculates the total return. The portfolio is tracked and outputted as a “.csv” for the given iteration. The total return is then passed back to Script 1.</li>
-                                    <li>Script 1 then documents the iteration, parameter weightings, and its associated returns.</li>
+                                    <li>These weights are then passed through to Script 2 which generates the monthly buy signals for that given year. These signals are outputted in “.csv” for tracking and passed through to the Script 3, the backtest.</li>
+                                    <li>The backtest takes the generated signals, runs through the year with the monthly buys, and calculates the total return for that portfolio. The portfolio is tracked and outputted as a “.csv” for the given iteration. The total return is then passed back to Script 1.</li>
+                                    <li>Script 1 then documents the iteration #, associated parameter weightings, and its total returns.</li>
                                     <li>It then moves onto the next iteration to go through the process all over again until we hit 500 iterations for the year.</li>
                                     <br>
                                     
@@ -108,7 +108,7 @@
                                     <div style="text-align:center"> <a href="monte_carlo_parameters.html"> click image for results </a> </div> <br>
     
                                     
-                                    Going through the results there’s no smoking gun and that is expected as we are looking at only 5 parameters with 500 iterations per year, which is quite small. The purpose of this project was to build the framework in which research can be conducted when constructing a strategy through quantitative evidence. 
+                                    Going through the results there’s no smoking gun and that is expected as we are looking at only 5 parameters with 500 iterations per year, which is quite a small sample size. The purpose of this project was to build the framework in which research can be conducted when constructing a strategy through quantitative evidence. 
                                     
                                     <br>
                                     <br>
